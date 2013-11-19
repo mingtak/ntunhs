@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf8'?>
+<model xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns="http://namespaces.plone.org/supermodel/schema">
+  <schema>
+    <field name="body" type="plone.app.textfield.RichText">
+      <description/>
+      <required>False</required>
+      <title>活動內文</title>
+    </field>
+    <field name="attach_file" type="plone.namedfile.field.NamedBlobFile">
+      <description/>
+      <required>False</required>
+      <title>附件檔</title>
+    </field>
+  </schema>
+</model>
