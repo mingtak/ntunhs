@@ -15,11 +15,14 @@
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
 
-  <div tal:content="structure context/body/output">
+  <div tal:condition="python:False if context.body is None else True"
+       tal:content="structure context/body/output">
   </div>
   <div>
   <a tal:attributes="href string:${context/absolute_url}/@@download/attach_file/${context/attach_file/filename}"
-                          tal:content="string:附件下載${context/attach_file/filename}"></a>
+                          tal:content="string:附件下載${context/attach_file/filename}"
+     tal:condition="python:False if context.attach_file is None else True">
+  </a>
   </div><br />
     <h3 id="event_apply_form">活動報名表</h3>
     <tal:block tal:replace="structure context/apply_form/@@embedded"/>
