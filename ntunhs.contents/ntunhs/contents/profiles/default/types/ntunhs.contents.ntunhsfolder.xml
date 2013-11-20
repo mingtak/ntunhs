@@ -1,31 +1,27 @@
 <?xml version="1.0"?>
-<object name="ntunhs.contents.events"
+<object name="ntunhs.contents.ntunhsfolder"
    meta_type="Dexterity FTI"
    i18n:domain="ntunhs.contents" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
   <!-- Basic metadata -->
-  <property name="title" i18n:translate="">events</property>
+  <property name="title" i18n:translate="">ntunhsfolder</property>
   <property name="description"
-    i18n:translate="">events for NTUNHS</property>
-  <property name="icon_expr">string:${portal_url}/document_icon.png</property>
-  <property name="factory">ntunhs.contents.events</property>
+    i18n:translate="">NTUNHS use-only folder</property>
+  <property name="icon_expr">string:${portal_url}/folder_icon.png</property>
+  <property name="factory">ntunhs.contents.ntunhsfolder</property>
   <property name="global_allow">True</property>
-  <property name="filter_content_types">True</property>
+  <property name="filter_content_types">False</property>
   <property name="allowed_content_types" />
   <property name="allow_discussion">False</property>
 
   <!-- schema and class used for content items -->
-  <property name="schema">ntunhs.contents.events.Ievents</property>
-  <property name="klass">ntunhs.contents.events.events</property>
+  <property name="schema">ntunhs.contents.ntunhsfolder.Intunhsfolder</property>
+  <property name="klass">ntunhs.contents.ntunhsfolder.ntunhsfolder</property>
 
   <property name="behaviors">
-   <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer"/>
-   <element value="plone.app.content.interfaces.INameFromTitle"/>
-   <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
-   <element value="plone.app.dexterity.behaviors.metadata.ICategorization"/>
-   <element value="plone.app.dexterity.behaviors.metadata.IPublication"/>
-   <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
-  </property>
+     <element value="plone.app.content.interfaces.INameFromTitle" />
+     <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
+   </property>
 
   <!-- View information -->
   <property name="link_target"></property>

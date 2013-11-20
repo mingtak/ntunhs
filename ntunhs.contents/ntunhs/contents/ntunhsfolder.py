@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from five import grok
 
 from z3c.form import group, field
@@ -17,39 +16,36 @@ from plone.namedfile.interfaces import IImageScaleTraversable
 
 from ntunhs.contents import MessageFactory as _
 
-#全文檢索用
-from collective import dexteritytextindexer
-
 
 # Interface class; used to define content-type schema.
 
-class Ievents(form.Schema, IImageScaleTraversable):
+class Intunhsfolder(form.Schema, IImageScaleTraversable):
     """
-    events for NTUNHS
+    NTUNHS use-only folder
     """
 
     # If you want a schema-defined interface, delete the model.load
     # line below and delete the matching file in the models sub-directory.
     # If you want a model-based interface, edit
-    # models/events.xml to define the content type.
+    # models/ntunhsfolder.xml to define the content type.
 
-    form.model("models/events.xml")
-    #定義全文檢索欄位
-    dexteritytextindexer.searchable('body')
+    form.model("models/ntunhsfolder.xml")
+
 
 # Custom content-type class; objects created for this content type will
 # be instances of this class. Use this class to add content-type specific
 # methods and properties. Put methods that are mainly useful for rendering
 # in separate view classes.
 
-class events(Container):
-    grok.implements(Ievents)
+class ntunhsfolder(Container):
+    grok.implements(Intunhsfolder)
+
     # Add your class methods and properties here
 
 
 # View class
 # The view will automatically use a similarly named template in
-# events_templates.
+# ntunhsfolder_templates.
 # Template filenames should be all lower case.
 # The view will render when you request a content object with this
 # interface with "/@@sampleview" appended.
@@ -60,9 +56,9 @@ class events(Container):
 class SampleView(grok.View):
     """ sample view class """
 
-    grok.context(Ievents)
+    grok.context(Intunhsfolder)
     grok.require('zope2.View')
 
-    grok.name('view')
+    # grok.name('view')
 
     # Add view methods here
