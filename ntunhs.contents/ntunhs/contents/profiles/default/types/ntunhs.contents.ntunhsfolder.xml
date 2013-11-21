@@ -11,7 +11,10 @@
   <property name="factory">ntunhs.contents.ntunhsfolder</property>
   <property name="global_allow">True</property>
   <property name="filter_content_types">False</property>
-  <property name="allowed_content_types" />
+  <property name="allowed_content_types">
+    <element value="News Item"/>
+    <element value="ntunhs.contents.ntunhsfolder"/>
+  </property>
   <property name="allow_discussion">False</property>
 
   <!-- schema and class used for content items -->
@@ -29,6 +32,7 @@
   <property name="default_view">view</property>
   <property name="view_methods">
    <element value="view"/>
+   <element value="news_view"/>
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>

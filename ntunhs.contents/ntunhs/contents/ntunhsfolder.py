@@ -58,7 +58,12 @@ class SampleView(grok.View):
 
     grok.context(Intunhsfolder)
     grok.require('zope2.View')
-
-    # grok.name('view')
+    grok.name('view')
 
     # Add view methods here
+
+
+class News_view(dexterity.DisplayForm):
+    grok.context(Intunhsfolder)
+    grok.require('zope2.View')
+    grok.name('news_view')
