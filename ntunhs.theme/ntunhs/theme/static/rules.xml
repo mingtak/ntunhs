@@ -6,8 +6,15 @@
 
     <theme href="index.html" />
 
+    <!-- top nav -->
+    <replace css:theme-children="nav" css:content-children="#ntunhsTopNav" />
 
+    <!-- logo -->
+    <replace css:theme="h1.logo a" css:content="a#portal-logo" />
 
+    <!-- Slide -->
+    <replace css:theme="#ntunhsSlide" css:content="#ntunhsSlide" />
+    <drop attributes="title height width" css:content="#ntunhsSlide" />
 
 </rules>
 
