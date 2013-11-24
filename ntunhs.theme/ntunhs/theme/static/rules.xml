@@ -13,9 +13,14 @@
     <replace css:theme="h1.logo a" css:content="a#portal-logo" />
 
     <!-- Slide -->
-    <replace css:theme="#ntunhsSlide" css:content="#ntunhsSlide" />
-    <drop attributes="title height width" css:content="#ntunhsSlide" />
+    <replace css:theme-children=".slides" css:content-children="#ntunhsSlides" />
+    <drop attributes="width" css:content="#ntunhsSlides li img" />
 
+    <!-- 首頁最新消息四區塊 -->
+    <replace css:theme="#ntunhsPlan" css:content="#ntunhsPlan" />
+    <replace css:theme="#ntunhsInternalNews" css:content="#ntunhsInternalNews" />
+    <replace css:theme="#ntunhsPlanAndDepartment" css:content="#ntunhsPlanAndDepartment" />
+    <replace css:theme="#ntunhsRace" css:content="#ntunhsRace" />
 </rules>
 
 

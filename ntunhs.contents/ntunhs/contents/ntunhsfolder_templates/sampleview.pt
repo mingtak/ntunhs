@@ -15,8 +15,27 @@
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
 
-    <h2>這是預設值，沒有任何內容，請點選上方「顯示」，選擇適當選項
-    </h2>
+<!-- 首頁slide圖片設定區塊開始 -->
+<div tal:define="folderBrianList python:container.portal_catalog({'portal_type':'ntunhs.contents.ntunhsfolder', 'id':'home_page_slide'});
+                 folderBrian python:folderBrianList[0];
+                 folderObject folderBrian/getObject">
+<p></p>
+<div id="ntunhsSlide">
+  
+  <div tal:repeat="item python:folderObject.listFolderContents(contentFilter={'portal_type':'Image'})">
+    
+    <a href="url" tal:attributes="href string:${item/absolute_url}/edit">
+      <img src="#" tal:attributes="src string:${item/absolute_url}/image_preview" />
+    </a>
+    <p></p>
+  </div>
+  
+</div>
+</div>
+<!-- 首頁slide圖片設定區塊結束 -->
+
+
+
 
   </metal:content-core>
 </metal:main>
