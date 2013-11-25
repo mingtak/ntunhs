@@ -455,6 +455,10 @@ input[type="reset"]:active {
 	background: #44BFE8;
 	color: #fff
 }
+#header .site-menu ul li.selected > a{
+        background: #44BFE8;
+        color: #fff
+}
 #header .site-menu ul > li > a:hover{
 	background: #72d0ef;
 	color: #fff
@@ -513,6 +517,11 @@ input[type="reset"]:active {
 	color: #44BFE8;
 	border: 2px solid #44BFE8;;
 }
+#header .site-menu.style1 ul > li.selected > a{
+        background: none;
+        color: #44BFE8;
+        border: 2px solid #44BFE8;;
+}
 #header .site-menu.style1 ul > li.sfHover > a,
 #header .site-menu.style1 ul > li > a:hover{
 	background: none;
@@ -522,11 +531,13 @@ input[type="reset"]:active {
 #header .site-menu.style1 ul li ul li a,
 #header .site-menu.style1 ul ul > li.sfHover > a,
 #header .site-menu.style1 ul ul > li.current > a,
+#header .site-menu.style1 ul ul > li.selected > a,
 #header .site-menu.style1 ul li ul li a:hover{
 	border: 0;
 }
 #header .site-menu.style1 ul li ul li a:hover,
 #header .site-menu.style1 ul ul > li.current > a,
+#header .site-menu.style1 ul ul > li.selected > a,
 #header .site-menu.style1 ul ul > li.sfHover > a{
 	background: #72d0ef;
 	color: #fff
@@ -552,9 +563,15 @@ input[type="reset"]:active {
 #header .fullmenu.style1 .site-menu ul li.current > a{
 	background: #72d0ef;
 }
+#header .fullmenu.style1 .site-menu ul li.selected > a{
+        background: #72d0ef;
+}
 #header .fullmenu.style1 .site-menu .sf-menu ul > li > a:hover,
 #header .fullmenu.style1 .site-menu .sf-menu ul li.current > a{
 	background: #72d0ef;
+}
+#header .fullmenu.style1 .site-menu .sf-menu ul li.selected > a{
+        background: #72d0ef;
 }
 /* Fullmenu Style 2*/
 #header .fullmenu.style2 .sf-menu{
@@ -582,10 +599,12 @@ input[type="reset"]:active {
 	display: none;
 }
 #header .fullmenu.style2 .sf-menu > li.current > a,
+#header .fullmenu.style2 .sf-menu > li.selected > a,
 #header .fullmenu.style2 .sf-menu > li:hover > a{
 	background: transparent;
 }
 #header .fullmenu.style2 .sf-menu > li.current > a:before,
+#header .fullmenu.style2 .sf-menu > li.selected > a:before,
 #header .fullmenu.style2 .sf-menu > li:hover > a:before{
 	display: block;
 }

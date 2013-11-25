@@ -52,6 +52,14 @@ def test_suite():
 
         # -*- extra stuff goes here -*-
 
+        # Integration tests for basicsetup
+        ztc.ZopeDocFileSuite(
+            'basicsetup.txt',
+            package='ntunhs.contents',
+            optionflags = OPTION_FLAGS,
+            test_class=TestCase),
+
+
         # Integration tests for ntunhsfolder
         ztc.ZopeDocFileSuite(
             'ntunhsfolder.txt',

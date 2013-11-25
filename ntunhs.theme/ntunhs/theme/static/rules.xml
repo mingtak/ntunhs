@@ -7,7 +7,8 @@
     <theme href="index.html" />
 
     <!-- top nav -->
-    <replace css:theme-children="nav" css:content-children="#ntunhsTopNav" />
+    <replace css:theme-children="nav ul" css:content-children="ul#portal-globalnav" />
+    <drop css:content="#portaltab-index_html-level1" />
 
     <!-- logo -->
     <replace css:theme="h1.logo a" css:content="a#portal-logo" />
@@ -15,6 +16,18 @@
     <!-- Slide -->
     <replace css:theme-children=".slides" css:content-children="#ntunhsSlides" />
     <drop attributes="width" css:content="#ntunhsSlides li img" />
+
+    <!-- 網站基本設定 -->
+    <replace css:theme="a#ntunhs_service_mailbox" css:content="a#ntunhs_service_mailbox" />
+    <replace css:theme-children="span#ntunhs_tel_number" css:content-children="li#ntunhs_tel_number" />
+    <replace css:theme-children="span#ntunhs_office_position" css:content-children="li#ntunhs_office_position" />
+    <replace css:theme-children="span#ntunhs_service_time" css:content-children="li#ntunhs_service_time" />
+    <replace css:theme-children="span#ntunhs_address" css:content-children="li#ntunhs_address" />
+    <replace css:theme="a#ntunhs_office_mail" css:content="a#ntunhs_office_mail" />
+    <replace css:theme-children="span#ntunhs_office_tel" css:content-children="li#ntunhs_office_tel" />
+    <replace css:theme-children="span#ntunhs_office_fax" css:content-children="li#ntunhs_office_fax" />
+    <replace css:theme-children="span#ntunhs_copyright" css:content-children="li#ntunhs_copyright" />
+
 
     <!-- 首頁最新消息四區塊 -->
     <replace css:theme="#ntunhsPlan" css:content="#ntunhsPlan" />
