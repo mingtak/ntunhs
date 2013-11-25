@@ -18,6 +18,7 @@
     <drop attributes="width" css:content="#ntunhsSlides li img" />
 
     <!-- 網站基本設定 -->
+<!--
     <replace css:theme="a#ntunhs_service_mailbox" css:content="a#ntunhs_service_mailbox" />
     <replace css:theme-children="span#ntunhs_tel_number" css:content-children="li#ntunhs_tel_number" />
     <replace css:theme-children="span#ntunhs_office_position" css:content-children="li#ntunhs_office_position" />
@@ -27,7 +28,7 @@
     <replace css:theme-children="span#ntunhs_office_tel" css:content-children="li#ntunhs_office_tel" />
     <replace css:theme-children="span#ntunhs_office_fax" css:content-children="li#ntunhs_office_fax" />
     <replace css:theme-children="span#ntunhs_copyright" css:content-children="li#ntunhs_copyright" />
-
+-->
 
     <!-- 首頁最新消息四區塊 -->
     <replace css:theme="#ntunhsPlan" css:content="#ntunhsPlan" />

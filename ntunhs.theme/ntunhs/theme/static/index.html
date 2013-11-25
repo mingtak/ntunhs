@@ -46,17 +46,17 @@
         <div class="col-lg-6 col-md-6 text-right top-header-right">
 
           <div class="header-search pull-right visible-lg visible-md" id="header-search">
-            <form method="get" id="searchform" action="#">
-              <div class="header-search-input-wrap"><input class="header-search-input" placeholder="Type to search..." type="text" value="" name="s" id="s"/></div>
+            <form method="get" id="searchform" action="@@search">
+              <div class="header-search-input-wrap"><input class="header-search-input" placeholder="全文搜尋" type="text" value="" name="SearchableText" id="s"/></div>
               <input class="header-search-submit" type="submit" id="go" value=""><span class="header-icon-search"><i class="fa fa-search"></i></span>
             </form><!-- // #searchform -->
           </div><!-- // .header-search -->
-
+<!--
           <ul class="social list-unstyled pull-right">
             <li class="facebook"><a data-toggle="tooltip" data-placement="bottom" title="Facebook Page" href="#"><i class="fa fa-facebook"></i></a></li>
             <li class="googleplus"><a data-toggle="tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a></li>
             <li class="rss"><a data-toggle="tooltip" data-placement="bottom" title="RSS News" href="#"><i class="fa fa-rss"></i></a></li>
-          </ul><!-- // .social -->
+          </ul>--><!-- // .social -->
 
         </div><!-- // .top-header-right -->
 
@@ -80,8 +80,8 @@
 
         <div class="left-menu hide">
           <div class="left-menu-info">
-            <form action="post">
-              <input type="text" placeholder="Type to search" name="s">
+            <form action="@@search">
+              <input type="text" placeholder="全文搜尋" name="SearchableText">
               <button><i class="fa fa-search"></i></button>
             </form>
           </div><!-- // .left-menu-info -->
