@@ -17,6 +17,10 @@
     <!-- logo -->
     <replace css:theme="h1.logo a" css:content="a#portal-logo" />
 
+    <!-- title -->
+    <replace css:theme="html head title" css:content="html head title" />
+
+    <notheme if-path="@@search" />
 
     <!-- home page for NTUNHS-->
     <rules if-path="/">
@@ -66,6 +70,7 @@
         <replace css:theme-children="div#ntunhs-content-core"
                  css:content-children="div#content-core" />
     </rules>
+
 
     <!-- home page for 典範計畫 -->
     <rules if-path="about_plan">
@@ -227,7 +232,106 @@
     </rules>
 
 
+    <!-- home page for FAQ -->
+    <rules if-path="faq">
+        <!-- theme -->
+        <theme href="page-left-sidebar.html" />
+        <notheme css:if-content="body.template-atct_edit" />
+        <notheme if-path="@@manage-portlets" />
 
+        <!-- left nav -->
+        <replace css:theme-children="ul#ntunhs-left-nav"
+                 css:content-children="ul.navTree.navTreeLevel0" />
+        <replace css:theme="#ntunhs-left-nav-title"
+                 css:content="#breadcrumbs-current" css:if-not-content="#breadcrumbs-3" />
+        <replace css:theme-children="#ntunhs-left-nav-title"
+                 css:content-children="#breadcrumbs-2 a" css:if-content="#breadcrumbs-3" />
+
+        <!-- edit bar -->
+        <replace css:theme-children="div#ntunhs-edit-bar div.widget-content"
+                 css:content-children="div#edit-bar" />
+        <drop css:content="div#edit-bar p.hiddenStructure" />
+        <drop css:theme="div#ntunhs-edit-bar" css:if-not-content="div#edit-bar" />
+
+        <!-- body header -->
+        <replace css:theme-children="div#content h3.large"
+                 css:content-children="h1#parent-fieldname-title" />
+        <after css:theme="div#content h3.large"
+               css:content="div#viewlet-below-content-title" />
+
+        <!-- body/content-core -->
+        <replace css:theme-children="div#content"
+                 css:content="div#accordion" css:if-content="div#accordion" />
+        <drop css:theme="div#content h3.large" css:if-content="div#accordion" />
+        <drop css:theme="div#ntunhs-content-core" css:if-content="div#accordion" />
+        <replace css:theme-children="div#ntunhs-content-core"
+                 css:content="div#content-core" css:if-not-content="div#accordion" />
+        <drop css:theme="div#accordion" css:if-not-content="div#accordion" />
+    </rules>
+
+
+    <!-- home page for links -->
+    <rules if-path="links">
+        <!-- theme -->
+        <theme href="page-left-sidebar.html" />
+        <notheme css:if-content="body.template-atct_edit" />
+        <notheme if-path="@@manage-portlets" />
+
+        <!-- left nav -->
+        <drop css:theme="div#ntunhs-sidebar-next-div" />
+<!--        <replace css:theme-children="ul#ntunhs-left-nav"
+                 css:content-children="ul.navTree.navTreeLevel0" />
+        <replace css:theme="#ntunhs-left-nav-title"
+                 css:content="#breadcrumbs-current" css:if-not-content="#breadcrumbs-3" />
+        <replace css:theme-children="#ntunhs-left-nav-title"
+                 css:content-children="#breadcrumbs-2 a" css:if-content="#breadcrumbs-3" />
+-->
+        <!-- edit bar -->
+        <replace css:theme-children="div#ntunhs-edit-bar div.widget-content"
+                 css:content-children="div#edit-bar" />
+        <drop css:content="div#edit-bar p.hiddenStructure" />
+        <drop css:theme="div#ntunhs-edit-bar" css:if-not-content="div#edit-bar" />
+
+        <!-- body header -->
+        <replace css:theme-children="div#content h3.large"
+                 css:content-children="h1#parent-fieldname-title" />
+        <after css:theme="div#content h3.large"
+               css:content="div#viewlet-below-content-title" />
+
+        <!-- body/content-core -->
+        <replace css:theme-children="div#ntunhs-content-core"
+                 css:content-children="div#content-core" />
+
+    </rules>
+
+
+    <!-- home page for 典範計畫 -->
+    <rules if-path="contact_us">
+        <!-- theme -->
+        <theme href="contact.html" />
+        <notheme css:if-content="body.template-atct_edit" />
+        <notheme if-path="@@manage-portlets" />
+
+        <!-- edit bar -->
+        <replace css:theme-children="div#ntunhs-edit-bar div.widget-content"
+                 css:content-children="div#edit-bar" />
+        <drop css:content="div#edit-bar p.hiddenStructure" />
+        <drop css:theme="div#ntunhs-edit-bar" css:if-not-content="div#edit-bar" />
+        <drop css:theme="div#sidebar" css:if-not-content="div#edit-bar" />
+
+        <!-- body header -->
+        <replace css:theme-children="div#content h3.large"
+                 css:content-children="h1#parent-fieldname-title" />
+        <after css:theme="div#content h3.large"
+               css:content="div#viewlet-below-content-title" />
+
+        <!-- body/content-core -->
+        <replace css:theme-children="div#ntunhs-content-core"
+                 css:content-children="div#content-core"/>
+        <drop css:theme="div#ntunhs-two-clo" css:if-not-content="div#edit-bar" />
+        <drop css:theme="div#ntunhs-full-width" css:if-content="div#edit-bar" />
+
+    </rules>
 
 
 

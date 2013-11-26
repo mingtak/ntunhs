@@ -39,26 +39,24 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-md-6 top-header-left">
-          <span><strong>Support:</strong> contact@domain.com</span>
-          <span><strong>Call center:</strong> 1900.1500.EROSS</span>
+          <span><strong>服務信箱:</strong><a id="ntunhs_service_mailbox" href="mailto:service@ntunhs.edu.tw">service@ntunhs.edu.tw</a></span>
+          <span><strong> 招商專線:</strong><span id="ntunhs_tel_number">02-2345-6789<span></span>
         </div><!-- // .top-header-left -->
 
         <div class="col-lg-6 col-md-6 text-right top-header-right">
 
           <div class="header-search pull-right visible-lg visible-md" id="header-search">
-            <form method="get" id="searchform" action="#">
-              <div class="header-search-input-wrap"><input class="header-search-input" placeholder="Type to search..." type="text" value="" name="s" id="s"/></div>
+            <form method="get" id="searchform" action="@@search">
+              <div class="header-search-input-wrap"><input class="header-search-input" placeholder="全文搜尋" type="text" value="" name="SearchableText" id="s"/></div>
               <input class="header-search-submit" type="submit" id="go" value=""><span class="header-icon-search"><i class="fa fa-search"></i></span>
             </form><!-- // #searchform -->
           </div><!-- // .header-search -->
-
+<!--
           <ul class="social list-unstyled pull-right">
             <li class="facebook"><a data-toggle="tooltip" data-placement="bottom" title="Facebook Page" href="#"><i class="fa fa-facebook"></i></a></li>
-            <li class="twitter"><a data-toggle="tooltip" data-placement="bottom" title="Follow us on Twitter" href="#"><i class="fa fa-twitter"></i></a></li>
             <li class="googleplus"><a data-toggle="tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li class="linkedin"><a data-toggle="tooltip" data-placement="bottom" title="LinkedIn" href="#"><i class="fa fa-linkedin"></i></a></li>
             <li class="rss"><a data-toggle="tooltip" data-placement="bottom" title="RSS News" href="#"><i class="fa fa-rss"></i></a></li>
-          </ul><!-- // .social -->
+          </ul>--><!-- // .social -->
 
         </div><!-- // .top-header-right -->
 
@@ -78,12 +76,12 @@
 
       </h1><!-- // #logo -->
 
-      <div id="mainmenu" class="site-menu visible-lg visible-md style1 right-menu">
+      <div id="mainmenu" class="site-menu visible-lg visible-md right-menu">
 
         <div class="left-menu hide">
           <div class="left-menu-info">
-            <form action="post">
-              <input type="text" placeholder="Type to search" name="s">
+            <form action="@@search">
+              <input type="text" placeholder="全文搜尋" name="SearchableText">
               <button><i class="fa fa-search"></i></button>
             </form>
           </div><!-- // .left-menu-info -->
@@ -91,7 +89,7 @@
 
         <nav>
           <ul class="menu sf-menu list-unstyled clearfix">
-            <li>
+            <li class="current">
               <a href="index.html">Home</a>
               <ul>
                 <li><a href="index-1.html">Home - 1</a></li>
@@ -107,7 +105,7 @@
                 <li><a href="about-us.html">About Us</a></li>
                 <li><a href="jobs.html">Work With Us</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
-                <li class="current"><a href="faq.html">FAQ</a></li>
+                <li><a href="faq.html">FAQ</a></li>
               </ul>
             </li>
 
@@ -135,7 +133,7 @@
               <a href="portfolio.html">Portfolio</a>
               <ul>
                 <li><a href="portfolio-filter.html">Portfolio Filter</a></li>
-                <li><a href="portfolio-detail.html">Portfolio Detail</a></li>
+                <li><a href="portfolio-detail">Portfolio Detail</a></li>
               </ul>
             </li>
 
@@ -168,184 +166,187 @@
     </div><!-- // .container -->
   </div><!-- // .main-header -->
 </header><!-- // header -->
+
 <div id="heading" class="heading-3">
 	<div class="container">
 		<h2 class="page-heading">
-			Page heading
 		</h2>
 	</div><!-- // .container -->
 	<div class="bgshadow"></div>
 </div><!-- // #heading -->
-<div class="main-content" id="full-width">
+
+
+<div class="main-content sidebar-content" id="sidebar-content">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-8 col-md-8 col-sm-8">
-				<div class="accordion" id="accordion">
+			<div class="col-lg-8 col-md-8 single" id="content">
 
-					<div class="panel accordion-item">
-						<div class="accordion-heading">
-							<h5 class="accordion-title">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapse-1">
-									<i class="icon-accordion"></i>What is a Premium Theme ?
-								</a>
-							</h5><!-- // .accordion-title -->
-						</div><!-- // .accordion-heading -->
+      <h3 class="large">Rem vitae ducimus explicabo hic iure quaerat odit repellat voluptates</h3>
+<div id="ntunhs-content-core">
 
-						<div id="collapse-1" class="accordion-collapse collapse in">
-							<div class="accordion-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-							</div>
-						</div><!-- // .accordion-collapse -->
-					</div><!-- // .accordion-item -->
+      <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur to$
 
-					<div class="panel accordion-item">
-						<div class="accordion-heading">
-							<h5 class="accordion-title">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-2">
-									<i class="icon-accordion"></i>How much does it cost ?
-								</a>
-							</h5><!-- // .accordion-title -->
-						</div><!-- // .accordion-heading -->
+      <p>Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nos$
 
-						<div id="collapse-2" class="accordion-collapse collapse">
-							<div class="accordion-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-							</div>
-						</div><!-- // .accordion-item -->
-					</div><!-- // .accordion-item -->
+      <p>Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ip$
+</div>
 
-					<div class="panel accordion-item">
-						<div class="accordion-heading">
-							<h5 class="accordion-title">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-3">
-									<i class="icon-accordion"></i>Why should I purchase premium theme ?
-								</a>
-							</h5><!-- // .accordion-title -->
-						</div><!-- // .accordion-heading -->
 
-						<div id="collapse-3" class="accordion-collapse collapse">
-							<div class="accordion-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-							</div>
-						</div><!-- // .accordion-item -->
-					</div><!-- // .accordion-item -->
 
-					<div class="panel accordion-item">
-						<div class="accordion-heading">
-							<h5 class="accordion-title">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-4">
-									<i class="icon-accordion"></i>Where I can get support ?
-								</a>
-							</h5><!-- // .accordion-title -->
-						</div><!-- // .accordion-heading -->
 
-						<div id="collapse-4" class="accordion-collapse collapse">
-							<div class="accordion-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-							</div>
-						</div><!-- // .accordion-item -->
-					</div><!-- // .accordion-item -->
+<!--FAQ-->
+<div class="accordion" id="accordion">
 
-					<div class="panel accordion-item">
-						<div class="accordion-heading">
-							<h5 class="accordion-title">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-5">
-									<i class="icon-accordion"></i>How important is branding in website ?
-								</a>
-							</h5><!-- // .accordion-title -->
-						</div><!-- // .accordion-heading -->
+      <h3 class="large">Rem vitae ducimus explicabo hic iure quaerat odit repellat voluptates</h3>
+<div id="ntunhs-content-core">
 
-						<div id="collapse-5" class="accordion-collapse collapse">
-							<div class="accordion-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-							</div>
-						</div><!-- // .accordion-item -->
-					</div><!-- // .accordion-item -->
+      <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur to$
 
-					<div class="panel accordion-item">
-						<div class="accordion-heading">
-							<h5 class="accordion-title">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-6">
-									<i class="icon-accordion"></i>What is user interface ?
-								</a>
-							</h5><!-- // .accordion-title -->
-						</div><!-- // .accordion-heading -->
+      <p>Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nos$
 
-						<div id="collapse-6" class="accordion-collapse collapse">
-							<div class="accordion-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-							</div>
-						</div><!-- // .accordion-item -->
-					</div><!-- // .accordion-item -->
+      <p>Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ip$
+</div>
 
-					<div class="panel accordion-item">
-						<div class="accordion-heading">
-							<h5 class="accordion-title">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-7">
-									<i class="icon-accordion"></i>Why should I use premium theme ?
-								</a>
-							</h5><!-- // .accordion-title -->
-						</div><!-- // .accordion-heading -->
 
-						<div id="collapse-7" class="accordion-collapse collapse">
-							<div class="accordion-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-							</div>
-						</div><!-- // .accordion-item -->
-					</div><!-- // .accordion-item -->
 
-					<div class="panel accordion-item">
-						<div class="accordion-heading">
-							<h5 class="accordion-title">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-8">
-									<i class="icon-accordion"></i>How to update my theme ?
-								</a>
-							</h5><!-- // .accordion-title -->
-						</div><!-- // .accordion-heading -->
 
-						<div id="collapse-8" class="accordion-collapse collapse">
-							<div class="accordion-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-							</div>
-						</div><!-- // .accordion-item -->
-					</div><!-- // .accordion-item -->
+  <div class="panel accordion-item">
+  	<div class="accordion-heading">
+  		<h5 class="accordion-title">
+  			<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-3">
+  				<i class="icon-accordion"></i>Why should I purchase premium theme ?
+  			</a>
+  		</h5><!-- // .accordion-title -->
+  	</div><!-- // .accordion-heading -->
 
-				</div><!-- // .accordion -->
-			</div>
+  	<div id="collapse-3" class="accordion-collapse collapse">
+  		<div class="accordion-body">
+  			Anim esciunt you probably haven't heard of them accusamus labore sustainable VHS.
+  		</div>
+  	</div><!-- // .accordion-item -->
+  </div><!-- // .accordion-item -->
 
-			<div class="col-lg-4 col-md-4 col-sm-4">
-				<div class="callout style3">
-					<div class="inner">
-						<h4 class="heading large bottom-5">One More Questions ?</h4>
-						<h5 class="gray">Let us know</h5>
-						<p>Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.</p>
-						<a href="#" class="button border top-25">Contact Us</a>
-					</div><!-- // .inner -->
-				</div><!-- // .callout -->
+</div>
 
-				<div class="infobox style2">
-					<figure>
-						<a href="#"><img alt="" src="images/placeholder/800x600.gif" class="img-responsive"></a>
-						<figcaption>
-							<h3>Adipisci similique</h3>
-							<span>Suspendisse in justo eu magna luctus suscipit</span>
-						</figcaption>
-					</figure>
-				</div><!-- // .infobox -->
 
-			</div><!-- # end column -->
+<!--FAQ-->
 
-		</div><!-- // .row -->
+			</div><!-- // #content -->
+			
+      <div class="col-lg-3 col-md-3 top-30-sm top-30-xs col-lg-offset-1 col-md-offset-1 hidden-xs" id="sidebar">
+
+					<div class="widget">
+						<h4 class="widget-title">
+							<span id="ntunhs-left-nav-title">Page</span>
+						</h4>
+						<div class="widget-content">
+							<ul id="ntunhs-left-nav">
+								<li><a href="#">Consctetur</a></li>
+							</ul>
+						</div><!-- // .widget-content -->
+						
+					</div><!-- // .widget -->
+
+<div id="ntunhs-edit-bar" class="widget">
+        <h4 class="widget-title">
+                <span><font color="blue"">管理面板</font></span>
+        </h4>
+        <div class="widget-content">
+                <ul>
+                        <li><a href="#">Consctetur</a></li>
+                        <li><a href="#">Adipisicing</a></li>
+                        <li><a href="#">Neque</a></li>
+                        <li><a href="#">Voluptatibus</a></li>
+                        <li><a href="#">Explicabo</a></li>
+                        <li><a href="#">Similique</a></li>
+                </ul>
+        </div><!-- // .widget-content -->
+
+</div><!-- // .widget -->
+
+
+
+				</div><!-- // #sidebar -->		
+      </div><!-- // .row -->
 	</div><!-- // .container -->
-</div><!-- // #full-width -->
+</div><!-- // .main-content -->
+
+
+
+<br />
+<br />
+<br />
+
+<!-- 第二個section -->
+<section id="team" class="clearfix">
+
+  <div class="horizontal-icon">
+    <div class="icon">
+      <i class="fa fa-user"></i>
+    </div><!-- // .icon -->
+  </div><!-- // .horizontal-icon -->
+
+  <div class="title-block">
+    <h3 class="title-heading">平台連結</h3>
+    <span class="line"></span>
+    <span></span>
+  </div><!-- // .title-block -->
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-4 col-md-4 col-sm-4 bottom-20-xs">
+        <div class="team clearfix">
+          <div class="team-avatar">
+            <img src="images/placeholder/libary_image.png" alt="">
+          </div><!-- // .team-avatar -->
+
+          <div class="team-info">
+            <a href="http://ntunhs.playgroup.com.tw/links/knowledge"><h5 class="button border green">知識管理系統</h5></a>
+<!--            <span class="position">Knowledge base</span> -->
+            <p>提供多項管理專業資訊連結，內容函蓋多方資訊，充實自我專業的好地方。</p>
+          </div><!-- // .team-info -->
+        </div><!-- // .team -->
+      </div><!-- // end column -->
+
+      <div class="col-lg-4 col-md-4 col-sm-4 bottom-20-xs">
+        <div class="team clearfix">
+          <div class="team-avatar">
+            <img src="images/placeholder/school_image1.png" alt="">
+          </div><!-- // .team-avatar -->
+
+          <div class="team-info">
+           <a href="http://ntunhs.playgroup.com.tw/links/about_job"> <h5 class="button border orange">就業職能平台</h5></a>
+<!--            <span class="position">Human Resources</span> -->
+            <p>與政府就業平台連結，提供工作職缺及職業訓練相關資訊，增強自我專業技能，提升職場競爭力。</p>
+          </div><!-- // .team-info -->
+        </div><!-- // .team -->
+      </div><!-- // end column -->
+
+      <div class="col-lg-4 col-md-4 col-sm-4 bottom-20-xs">
+        <div class="team clearfix">
+          <div class="team-avatar">
+            <img src="images/placeholder/school_image2.png" alt="">
+          </div><!-- // .team-avatar -->
+
+          <div class="team-info">
+            <a href="http://ntunhs.playgroup.com.tw/contact_us/index"><h5 class="button border blue">聯絡我們</h5></a>
+<!--            <span class="position">Contact us</span> -->
+            <p>提供本中心聯絡方式及表單，不論是產學相關提案或輔導需求，或是網站相關建議，均歡迎各方先進與我們聯絡。</p>
+          </div><!-- // .team-info -->
+        </div><!-- // .team -->
+      </div><!-- // end column -->
+
+    </div><!-- // .row -->
+  </div><!-- // .container -->
+</section><!-- // #team -->
+<!-- 第二個section -->
 
 <footer id="footer">
-
    <div id="breadcrumb">
     <div class="container">
       <ul class="clearfix list-unstyled">
-        <li><a href="#">Home</a></li>
-        <li><span>FAQ</span></li>
+        <li><span></span></li>
       </ul><!-- // .list-unstyled -->
     </div><!-- // .container -->
   </div><!-- // #breadcrumb -->
@@ -355,24 +356,28 @@
       <div class="row">
 
         <div class="widget quick-contact col-lg-9 col-md-9 bottom-30-sm bottom-30-xs">
-          <div class="widget-title">
-            <h5>Quick Contact</h5>
-          </div><!-- // .widget-title -->
 
-          <p>Amet, commodi, hic fugiat repellat mollitia est nesciunt nostrum error tenetur itaque totam beatae at blanditiis ullam suscipit! Modi, iure accusantium cum?</p>
+          <div class="widget-title">
+            <h5>專案辦公室資訊</h5>
+          </div> <!-- // .widget-title -->
+
+          <p>辦公室地點：<span id="ntunhs_office_position">行政大樓3樓企畫室</span> - 服務時間： <span id="ntunhs_service_time">星期一至星期五 上午8:30~12:00 下午1:30~5:30</span></p>
 
           <ul class="list-unstyled contact-field-list clearfix">
-            <li><i class="fa fa-home"></i>102, Vancover</li>
-            <li><i class="fa fa-envelope"></i>hello@prettyname.com</li>
-            <li><i class="fa fa-mobile"></i>(+01) . 234 . 567</li>
-            <li><i class="fa fa-phone"></i>1900-500-EROSS</li>
+            <li>地址:<span id="ntunhs_address">台北市北投區 11219 明德路365號</span> </li>
+            <li>email:<a id="ntunhs_office_mail" href="mailto:service@ntunhs.edu.tw">service@ntunhs.edu.tw</a></li>
+            <li>電話:<span id="ntunhs_office_tel">(02)2822-7107</span></li>
+            <li>傳真:<span id="ntunhs_office_fax">(02)2822-XXXX</span></li>
           </ul><!-- // .contact-field-list -->
 
         </div><!-- // .widget -->
 
         <div class="widget col-lg-3 col-md-3 bottom-30-sm bottom-30-xs">
-          <img src="images/footer-logo.png" alt="">
-          <p class="top-10">Eross Multiperpose HTML5 Template by EverisLabs. Creat unlimited unique layout with hundread of features.</p>
+<!--          <img src="http://ntunhs.playgroup.com.tw/image_files/logo/image_thumb" alt=""> -->
+          <br />
+          <br />
+          <img src="http://ntunhs.playgroup.com.tw/image_files/footlogo" alt="" />
+<!--          <p class="top-10">Eross Multiperpose HTML5 Template by EverisLabs. Creat unlimited unique layout with hundread of features.</p> -->
         </div><!-- // .widget -->
 
       </div><!-- // .row -->
@@ -384,16 +389,16 @@
       <div class="row">
 
         <div class="col-lg-6 col-md-6">
-          <span>Design by <a href="#">EverisLabs</a></span>
+          <span id="ntunhs_copyright">Copyright © 2013 國立臺北護理健康大學 | 健康照護產學營運中心</span>
         </div><!-- // -->
-
+<!--
         <div class="col-lg-6 col-md-6 text-right">
           <ul class="list-unstyled">
             <li><a href="#">Term Of Use</a></li>
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="#">Contact Us</a></li>
           </ul>
-        </div><!-- // -->
+        </div> --> <!-- // -->
 
       </div><!-- // .row -->
     </div><!-- // .container -->
