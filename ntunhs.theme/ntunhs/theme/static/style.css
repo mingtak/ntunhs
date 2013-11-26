@@ -2332,6 +2332,11 @@ footer .tags.widget a{
 	background: #f9a1b0;
 	color: #932b3c
 }
+.portalMessage.error{
+        border-color: #DE3B56;
+        background: #f9a1b0;
+        color: #932b3c
+}
 .alert.info{
 	border-color: #2fc6f2;
 	background: #87e4ff;
@@ -2341,6 +2346,11 @@ footer .tags.widget a{
 	border-color: #d5cb5c;
 	background: #f3eda8;
 	color: #998f26
+}
+.fieldErrorBox{
+        border-color: #d5cb5c;
+        background: #f3eda8;
+        color: #998f26
 }
 .alert.success{
 	border-color: #5abd12;
