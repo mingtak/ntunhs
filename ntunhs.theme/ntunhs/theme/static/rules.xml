@@ -4,37 +4,99 @@
     xmlns:css="http://namespaces.plone.org/diazo/css"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <theme href="index.html" />
+    <!-- script -->
+    <before css:theme-children="html head" css:content="html head script" />
+
+    <!-- body class -->
+    <merge attributes="class" css:theme="body" css:content="body" />
 
     <!-- top nav -->
     <replace css:theme-children="nav ul" css:content-children="ul#portal-globalnav" />
     <drop css:content="#portaltab-index_html-level1" />
-
+ 
     <!-- logo -->
     <replace css:theme="h1.logo a" css:content="a#portal-logo" />
 
-    <!-- Slide -->
-    <replace css:theme-children=".slides" css:content-children="#ntunhsSlides" />
-    <drop attributes="width" css:content="#ntunhsSlides li img" />
 
-    <!-- 網站基本設定 -->
-<!--
-    <replace css:theme="a#ntunhs_service_mailbox" css:content="a#ntunhs_service_mailbox" />
-    <replace css:theme-children="span#ntunhs_tel_number" css:content-children="li#ntunhs_tel_number" />
-    <replace css:theme-children="span#ntunhs_office_position" css:content-children="li#ntunhs_office_position" />
-    <replace css:theme-children="span#ntunhs_service_time" css:content-children="li#ntunhs_service_time" />
-    <replace css:theme-children="span#ntunhs_address" css:content-children="li#ntunhs_address" />
-    <replace css:theme="a#ntunhs_office_mail" css:content="a#ntunhs_office_mail" />
-    <replace css:theme-children="span#ntunhs_office_tel" css:content-children="li#ntunhs_office_tel" />
-    <replace css:theme-children="span#ntunhs_office_fax" css:content-children="li#ntunhs_office_fax" />
-    <replace css:theme-children="span#ntunhs_copyright" css:content-children="li#ntunhs_copyright" />
--->
+    <!-- home page for NTUNHS-->
+    <rules if-path="/">
+        <!-- theme -->
+        <theme href="index.html" />
 
-    <!-- 首頁最新消息四區塊 -->
-    <replace css:theme="#ntunhsPlan" css:content="#ntunhsPlan" />
-    <replace css:theme="#ntunhsInternalNews" css:content="#ntunhsInternalNews" />
-    <replace css:theme="#ntunhsPlanAndDepartment" css:content="#ntunhsPlanAndDepartment" />
-    <replace css:theme="#ntunhsRace" css:content="#ntunhsRace" />
+        <!-- Slide -->
+        <replace css:theme-children=".slides" css:content-children="#ntunhsSlides" />
+        <drop attributes="width" css:content="#ntunhsSlides li img" />
+
+        <!-- 首頁最新消息四區塊 -->
+        <replace css:theme="#ntunhsPlan" css:content="#ntunhsPlan" />
+        <replace css:theme="#ntunhsInternalNews" css:content="#ntunhsInternalNews" />
+        <replace css:theme="#ntunhsPlanAndDepartment" css:content="#ntunhsPlanAndDepartment" />
+        <replace css:theme="#ntunhsRace" css:content="#ntunhsRace" />
+    </rules>
+
+
+    <!-- home page for news -->
+    <rules if-path="news">
+        <!-- theme -->
+        <theme href="page-left-sidebar.html" />
+        <notheme css:if-content="body.template-atct_edit" />
+        <notheme if-path="@@manage-portlets" />
+
+        <!-- left nav -->
+        <replace css:theme-children="ul#ntunhs-left-nav"
+                 css:content-children="ul.navTree.navTreeLevel0" />
+        <replace css:theme="#ntunhs-left-nav-title"
+                 css:content="#breadcrumbs-current" css:if-not-content="#breadcrumbs-3" />
+        <replace css:theme-children="#ntunhs-left-nav-title"
+                 css:content-children="#breadcrumbs-2 a" css:if-content="#breadcrumbs-3" />
+
+        <!-- edit bar -->
+        <replace css:theme-children="div#ntunhs-edit-bar div.widget-content"
+                 css:content-children="div#edit-bar" />
+        <drop css:content="div#edit-bar p.hiddenStructure" />
+        <drop css:theme="div#ntunhs-edit-bar" css:if-not-content="div#edit-bar" />
+
+        <!-- body header -->
+        <replace css:theme-children="div#content h3.large"
+                 css:content-children="h1#parent-fieldname-title" />
+        <after css:theme="div#content h3.large"
+               css:content="div#viewlet-below-content-title" />
+
+        <!-- body/content-core -->
+        <replace css:theme-children="div#ntunhs-content-core"
+                 css:content-children="div#content-core" />
+    </rules>
+
+    <!-- home page for 典範計畫 -->
+    <rules if-path="about_plan">
+        <!-- theme -->
+        <theme href="page-full-width.html" />
+        <notheme css:if-content="body.template-atct_edit" />
+        <notheme if-path="@@manage-portlets" />
+
+        <!-- edit bar -->
+        <replace css:theme-children="div#ntunhs-edit-bar div.widget-content"
+                 css:content-children="div#edit-bar" />
+        <drop css:content="div#edit-bar p.hiddenStructure" />
+        <drop css:theme="div#ntunhs-edit-bar" css:if-not-content="div#edit-bar" />
+        <drop css:theme="div#sidebar" css:if-not-content="div#edit-bar" />
+
+        <!-- body header -->
+        <replace css:theme-children="div#content h3.large"
+                 css:content-children="h1#parent-fieldname-title" />
+        <after css:theme="div#content h3.large"
+               css:content="div#viewlet-below-content-title" />
+
+        <!-- body/content-core -->
+        <replace css:theme-children="div#ntunhs-content-core"
+                 css:content-children="div#content-core"/>
+        <drop css:theme="div#ntunhs-two-clo" css:if-not-content="div#edit-bar" />
+        <drop css:theme="div#ntunhs-full-width" css:if-content="div#edit-bar" />
+    </rules>
+
+
+
+
 </rules>
 
 
