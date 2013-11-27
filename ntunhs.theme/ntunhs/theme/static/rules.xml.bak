@@ -11,11 +11,11 @@
     <merge attributes="class" css:theme="body" css:content="body" />
 
     <!-- top nav -->
-    <replace css:theme-children="nav ul" css:content-children="#portal-globalnav" />
+    <replace css:theme-children="nav ul" css:content-children="ul#portal-globalnav" />
     <drop css:content="#portaltab-index_html-level1" />
  
     <!-- logo -->
-    <replace css:theme="h1.logo a" css:content="#portal-logo" />
+    <replace css:theme="h1.logo a" css:content="a#portal-logo" />
 
     <!-- title -->
     <replace css:theme="html head title" css:content="html head title" />
@@ -46,7 +46,7 @@
         <notheme if-path="@@manage-portlets" />
 
         <!-- left nav -->
-        <replace css:theme-children="#ntunhs-left-nav"
+        <replace css:theme-children="ul#ntunhs-left-nav"
                  css:content-children="ul.navTree.navTreeLevel0" />
         <replace css:theme="#ntunhs-left-nav-title"
                  css:content="#breadcrumbs-current" css:if-not-content="#breadcrumbs-3" />
@@ -54,20 +54,20 @@
                  css:content-children="#breadcrumbs-2 a" css:if-content="#breadcrumbs-3" />
 
         <!-- edit bar -->
-        <replace css:theme-children="#ntunhs-edit-bar div.widget-content"
-                 css:content-children="#edit-bar" />
-        <drop css:content="#edit-bar p.hiddenStructure" />
-        <drop css:theme="#ntunhs-edit-bar" css:if-not-content="#edit-bar" />
+        <replace css:theme-children="div#ntunhs-edit-bar div.widget-content"
+                 css:content-children="div#edit-bar" />
+        <drop css:content="div#edit-bar p.hiddenStructure" />
+        <drop css:theme="div#ntunhs-edit-bar" css:if-not-content="div#edit-bar" />
 
         <!-- body header -->
-        <replace css:theme-children="#content h3.large"
-                 css:content-children="#parent-fieldname-title" />
-        <after css:theme="#content h3.large"
-               css:content="#viewlet-below-content-title" />
+        <replace css:theme-children="div#content h3.large"
+                 css:content-children="h1#parent-fieldname-title" />
+        <after css:theme="div#content h3.large"
+               css:content="div#viewlet-below-content-title" />
 
         <!-- body/content-core -->
-        <replace css:theme-children="#ntunhs-content-core"
-                 css:content-children="#content-core" />
+        <replace css:theme-children="div#ntunhs-content-core"
+                 css:content-children="div#content-core" />
     </rules>
 
 
@@ -79,23 +79,23 @@
         <notheme if-path="@@manage-portlets" />
 
         <!-- edit bar -->
-        <replace css:theme-children="#ntunhs-edit-bar div.widget-content"
-                 css:content-children="#edit-bar" />
-        <drop css:content="#edit-bar p.hiddenStructure" />
-        <drop css:theme="#ntunhs-edit-bar" css:if-not-content="#edit-bar" />
-        <drop css:theme="#sidebar" css:if-not-content="#edit-bar" />
+        <replace css:theme-children="div#ntunhs-edit-bar div.widget-content"
+                 css:content-children="div#edit-bar" />
+        <drop css:content="div#edit-bar p.hiddenStructure" />
+        <drop css:theme="div#ntunhs-edit-bar" css:if-not-content="div#edit-bar" />
+        <drop css:theme="div#sidebar" css:if-not-content="div#edit-bar" />
 
         <!-- body header -->
-        <replace css:theme-children="#content h3.large"
-                 css:content-children="#parent-fieldname-title" />
-        <after css:theme="#content h3.large"
-               css:content="#viewlet-below-content-title" />
+        <replace css:theme-children="div#content h3.large"
+                 css:content-children="h1#parent-fieldname-title" />
+        <after css:theme="div#content h3.large"
+               css:content="div#viewlet-below-content-title" />
 
         <!-- body/content-core -->
-        <replace css:theme-children="#ntunhs-content-core"
-                 css:content-children="#content-core"/>
-        <drop css:theme="#ntunhs-two-clo" css:if-not-content="#edit-bar" />
-        <drop css:theme="#ntunhs-full-width" css:if-content="#edit-bar" />
+        <replace css:theme-children="div#ntunhs-content-core"
+                 css:content-children="div#content-core"/>
+        <drop css:theme="div#ntunhs-two-clo" css:if-not-content="div#edit-bar" />
+        <drop css:theme="div#ntunhs-full-width" css:if-content="div#edit-bar" />
     </rules>
 
 
@@ -107,7 +107,7 @@
         <notheme if-path="@@manage-portlets" />
 
         <!-- left nav -->
-        <replace css:theme-children="#ntunhs-left-nav"
+        <replace css:theme-children="ul#ntunhs-left-nav"
                  css:content-children="ul.navTree.navTreeLevel0" />
         <replace css:theme="#ntunhs-left-nav-title"
                  css:content="#breadcrumbs-current" css:if-not-content="#breadcrumbs-3" />
@@ -115,20 +115,20 @@
                  css:content-children="#breadcrumbs-2 a" css:if-content="#breadcrumbs-3" />
 
         <!-- edit bar -->
-        <replace css:theme-children="#ntunhs-edit-bar div.widget-content"
-                 css:content-children="#edit-bar" />
-        <drop css:content="#edit-bar p.hiddenStructure" />
-        <drop css:theme="#ntunhs-edit-bar" css:if-not-content="#edit-bar" />
+        <replace css:theme-children="div#ntunhs-edit-bar div.widget-content"
+                 css:content-children="div#edit-bar" />
+        <drop css:content="div#edit-bar p.hiddenStructure" />
+        <drop css:theme="div#ntunhs-edit-bar" css:if-not-content="div#edit-bar" />
 
         <!-- body header -->
-        <replace css:theme-children="#content h3.large"
-                 css:content-children="#parent-fieldname-title" />
-        <after css:theme="#content h3.large"
-               css:content="#viewlet-below-content-title" />
+        <replace css:theme-children="div#content h3.large"
+                 css:content-children="h1#parent-fieldname-title" />
+        <after css:theme="div#content h3.large"
+               css:content="div#viewlet-below-content-title" />
 
         <!-- body/content-core -->
-        <replace css:theme-children="#ntunhs-content-core"
-                 css:content-children="#content-core" />
+        <replace css:theme-children="div#ntunhs-content-core"
+                 css:content-children="div#content-core" />
     </rules>
 
 
@@ -140,7 +140,7 @@
         <notheme if-path="@@manage-portlets" />
 
         <!-- left nav -->
-        <replace css:theme-children="#ntunhs-left-nav"
+        <replace css:theme-children="ul#ntunhs-left-nav"
                  css:content-children="ul.navTree.navTreeLevel0" />
         <replace css:theme="#ntunhs-left-nav-title"
                  css:content="#breadcrumbs-current" css:if-not-content="#breadcrumbs-3" />
@@ -148,20 +148,20 @@
                  css:content-children="#breadcrumbs-2 a" css:if-content="#breadcrumbs-3" />
 
         <!-- edit bar -->
-        <replace css:theme-children="#ntunhs-edit-bar div.widget-content"
-                 css:content-children="#edit-bar" />
-        <drop css:content="#edit-bar p.hiddenStructure" />
-        <drop css:theme="#ntunhs-edit-bar" css:if-not-content="#edit-bar" />
+        <replace css:theme-children="div#ntunhs-edit-bar div.widget-content"
+                 css:content-children="div#edit-bar" />
+        <drop css:content="div#edit-bar p.hiddenStructure" />
+        <drop css:theme="div#ntunhs-edit-bar" css:if-not-content="div#edit-bar" />
         
         <!-- body header -->
-        <replace css:theme-children="#content h3.large"
-                 css:content-children="#parent-fieldname-title" />
-        <after css:theme="#content h3.large"
-               css:content="#viewlet-below-content-title" />
+        <replace css:theme-children="div#content h3.large"
+                 css:content-children="h1#parent-fieldname-title" />
+        <after css:theme="div#content h3.large"
+               css:content="div#viewlet-below-content-title" />
 
         <!-- body/content -->
-        <replace css:theme-children="#ntunhs-content-core"
-                 css:content-children="#content" />
+        <replace css:theme-children="div#ntunhs-content-core"
+                 css:content-children="div#content" />
     </rules>
 
 
@@ -173,7 +173,7 @@
         <notheme if-path="@@manage-portlets" />
 
         <!-- left nav -->
-        <replace css:theme-children="#ntunhs-left-nav"
+        <replace css:theme-children="ul#ntunhs-left-nav"
                  css:content-children="ul.navTree.navTreeLevel0" />
         <replace css:theme="#ntunhs-left-nav-title"
                  css:content="#breadcrumbs-current" css:if-not-content="#breadcrumbs-3" />
@@ -181,20 +181,20 @@
                  css:content-children="#breadcrumbs-2 a" css:if-content="#breadcrumbs-3" />
 
         <!-- edit bar -->
-        <replace css:theme-children="#ntunhs-edit-bar div.widget-content"
-                 css:content-children="#edit-bar" />
-        <drop css:content="#edit-bar p.hiddenStructure" />
-        <drop css:theme="#ntunhs-edit-bar" css:if-not-content="#edit-bar" />
+        <replace css:theme-children="div#ntunhs-edit-bar div.widget-content"
+                 css:content-children="div#edit-bar" />
+        <drop css:content="div#edit-bar p.hiddenStructure" />
+        <drop css:theme="div#ntunhs-edit-bar" css:if-not-content="div#edit-bar" />
 
         <!-- body header -->
-        <replace css:theme-children="#content h3.large"
-                 css:content-children="#parent-fieldname-title" />
-        <after css:theme="#content h3.large"
-               css:content="#viewlet-below-content-title" />
+        <replace css:theme-children="div#content h3.large"
+                 css:content-children="h1#parent-fieldname-title" />
+        <after css:theme="div#content h3.large"
+               css:content="div#viewlet-below-content-title" />
 
         <!-- body/content-core -->
-        <replace css:theme-children="#ntunhs-content-core"
-                 css:content-children="#content-core" />
+        <replace css:theme-children="div#ntunhs-content-core"
+                 css:content-children="div#content-core" />
     </rules>
 
 
@@ -206,7 +206,7 @@
         <notheme if-path="@@manage-portlets" />
 
         <!-- left nav -->
-        <replace css:theme-children="#ntunhs-left-nav"
+        <replace css:theme-children="ul#ntunhs-left-nav"
                  css:content-children="ul.navTree.navTreeLevel0" />
         <replace css:theme="#ntunhs-left-nav-title"
                  css:content="#breadcrumbs-current" css:if-not-content="#breadcrumbs-3" />
@@ -214,20 +214,20 @@
                  css:content-children="#breadcrumbs-2 a" css:if-content="#breadcrumbs-3" />
 
         <!-- edit bar -->
-        <replace css:theme-children="#ntunhs-edit-bar div.widget-content"
-                 css:content-children="#edit-bar" />
-        <drop css:content="#edit-bar p.hiddenStructure" />
-        <drop css:theme="#ntunhs-edit-bar" css:if-not-content="#edit-bar" />
+        <replace css:theme-children="div#ntunhs-edit-bar div.widget-content"
+                 css:content-children="div#edit-bar" />
+        <drop css:content="div#edit-bar p.hiddenStructure" />
+        <drop css:theme="div#ntunhs-edit-bar" css:if-not-content="div#edit-bar" />
 
         <!-- body header -->
-        <replace css:theme-children="#content h3.large"
-                 css:content-children="#parent-fieldname-title" />
-        <after css:theme="#content h3.large"
-               css:content="#viewlet-below-content-title" />
+        <replace css:theme-children="div#content h3.large"
+                 css:content-children="h1#parent-fieldname-title" />
+        <after css:theme="div#content h3.large"
+               css:content="div#viewlet-below-content-title" />
 
         <!-- body/content-core -->
-        <replace css:theme-children="#ntunhs-content-core"
-                 css:content-children="#content-core" />
+        <replace css:theme-children="div#ntunhs-content-core"
+                 css:content-children="div#content-core" />
     </rules>
 
 
@@ -239,7 +239,7 @@
         <notheme if-path="@@manage-portlets" />
 
         <!-- left nav -->
-        <replace css:theme-children="#ntunhs-left-nav"
+        <replace css:theme-children="ul#ntunhs-left-nav"
                  css:content-children="ul.navTree.navTreeLevel0" />
         <replace css:theme="#ntunhs-left-nav-title"
                  css:content="#breadcrumbs-current" css:if-not-content="#breadcrumbs-3" />
@@ -247,25 +247,25 @@
                  css:content-children="#breadcrumbs-2 a" css:if-content="#breadcrumbs-3" />
 
         <!-- edit bar -->
-        <replace css:theme-children="#ntunhs-edit-bar div.widget-content"
-                 css:content-children="#edit-bar" />
-        <drop css:content="#edit-bar p.hiddenStructure" />
-        <drop css:theme="#ntunhs-edit-bar" css:if-not-content="#edit-bar" />
+        <replace css:theme-children="div#ntunhs-edit-bar div.widget-content"
+                 css:content-children="div#edit-bar" />
+        <drop css:content="div#edit-bar p.hiddenStructure" />
+        <drop css:theme="div#ntunhs-edit-bar" css:if-not-content="div#edit-bar" />
 
         <!-- body header -->
-        <replace css:theme-children="#content h3.large"
-                 css:content-children="#parent-fieldname-title" />
-        <after css:theme="#content h3.large"
-               css:content="#viewlet-below-content-title" />
+        <replace css:theme-children="div#content h3.large"
+                 css:content-children="h1#parent-fieldname-title" />
+        <after css:theme="div#content h3.large"
+               css:content="div#viewlet-below-content-title" />
 
         <!-- body/content-core -->
-        <replace css:theme-children="#content"
-                 css:content="#accordion" css:if-content="#accordion" />
-        <drop css:theme="#content h3.large" css:if-content="#accordion" />
-        <drop css:theme="#ntunhs-content-core" css:if-content="#accordion" />
-        <replace css:theme-children="#ntunhs-content-core"
-                 css:content="#content-core" css:if-not-content="#accordion" />
-        <drop css:theme="#accordion" css:if-not-content="#accordion" />
+        <replace css:theme-children="div#content"
+                 css:content="div#accordion" css:if-content="div#accordion" />
+        <drop css:theme="div#content h3.large" css:if-content="div#accordion" />
+        <drop css:theme="div#ntunhs-content-core" css:if-content="div#accordion" />
+        <replace css:theme-children="div#ntunhs-content-core"
+                 css:content="div#content-core" css:if-not-content="div#accordion" />
+        <drop css:theme="div#accordion" css:if-not-content="div#accordion" />
     </rules>
 
 
@@ -277,8 +277,8 @@
         <notheme if-path="@@manage-portlets" />
 
         <!-- left nav -->
-        <drop css:theme="#ntunhs-sidebar-next-div" />
-<!--        <replace css:theme-children="#ntunhs-left-nav"
+        <drop css:theme="div#ntunhs-sidebar-next-div" />
+<!--        <replace css:theme-children="ul#ntunhs-left-nav"
                  css:content-children="ul.navTree.navTreeLevel0" />
         <replace css:theme="#ntunhs-left-nav-title"
                  css:content="#breadcrumbs-current" css:if-not-content="#breadcrumbs-3" />
@@ -286,20 +286,20 @@
                  css:content-children="#breadcrumbs-2 a" css:if-content="#breadcrumbs-3" />
 -->
         <!-- edit bar -->
-        <replace css:theme-children="#ntunhs-edit-bar div.widget-content"
-                 css:content-children="#edit-bar" />
-        <drop css:content="#edit-bar p.hiddenStructure" />
-        <drop css:theme="#ntunhs-edit-bar" css:if-not-content="#edit-bar" />
+        <replace css:theme-children="div#ntunhs-edit-bar div.widget-content"
+                 css:content-children="div#edit-bar" />
+        <drop css:content="div#edit-bar p.hiddenStructure" />
+        <drop css:theme="div#ntunhs-edit-bar" css:if-not-content="div#edit-bar" />
 
         <!-- body header -->
-        <replace css:theme-children="#content h3.large"
-                 css:content-children="#parent-fieldname-title" />
-        <after css:theme="#content h3.large"
-               css:content="#viewlet-below-content-title" />
+        <replace css:theme-children="div#content h3.large"
+                 css:content-children="h1#parent-fieldname-title" />
+        <after css:theme="div#content h3.large"
+               css:content="div#viewlet-below-content-title" />
 
         <!-- body/content-core -->
-        <replace css:theme-children="#ntunhs-content-core"
-                 css:content-children="#content-core" />
+        <replace css:theme-children="div#ntunhs-content-core"
+                 css:content-children="div#content-core" />
 
     </rules>
 
@@ -312,23 +312,23 @@
         <notheme if-path="@@manage-portlets" />
 
         <!-- edit bar -->
-        <replace css:theme-children="#ntunhs-edit-bar div.widget-content"
-                 css:content-children="#edit-bar" />
-        <drop css:content="#edit-bar p.hiddenStructure" />
-        <drop css:theme="#ntunhs-edit-bar" css:if-not-content="#edit-bar" />
-        <drop css:theme="#sidebar" css:if-not-content="#edit-bar" />
+        <replace css:theme-children="div#ntunhs-edit-bar div.widget-content"
+                 css:content-children="div#edit-bar" />
+        <drop css:content="div#edit-bar p.hiddenStructure" />
+        <drop css:theme="div#ntunhs-edit-bar" css:if-not-content="div#edit-bar" />
+        <drop css:theme="div#sidebar" css:if-not-content="div#edit-bar" />
 
         <!-- body header -->
-        <replace css:theme-children="#content h3.large"
-                 css:content-children="#parent-fieldname-title" />
-        <after css:theme="#content h3.large"
-               css:content="#viewlet-below-content-title" />
+        <replace css:theme-children="div#content h3.large"
+                 css:content-children="h1#parent-fieldname-title" />
+        <after css:theme="div#content h3.large"
+               css:content="div#viewlet-below-content-title" />
 
         <!-- body/content-core -->
-        <replace css:theme-children="#ntunhs-content-core"
-                 css:content-children="#content-core"/>
-        <drop css:theme="#ntunhs-two-clo" css:if-not-content="#edit-bar" />
-        <drop css:theme="#ntunhs-full-width" css:if-content="#edit-bar" />
+        <replace css:theme-children="div#ntunhs-content-core"
+                 css:content-children="div#content-core"/>
+        <drop css:theme="div#ntunhs-two-clo" css:if-not-content="div#edit-bar" />
+        <drop css:theme="div#ntunhs-full-width" css:if-content="div#edit-bar" />
 
     </rules>
 
