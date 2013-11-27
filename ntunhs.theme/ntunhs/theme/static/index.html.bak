@@ -39,24 +39,24 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-md-6 top-header-left">
-          <span><strong>服務信箱:</strong>service@ntunhs.edu.tw </span>
-          <span><strong> 招商專線:</strong>02-2345-6789</span>
+          <span><strong>服務信箱:</strong><a id="ntunhs_service_mailbox" href="mailto:service@ntunhs.edu.tw">service@ntunhs.edu.tw</a></span>
+          <span><strong> 招商專線:</strong><span id="ntunhs_tel_number">02-2345-6789<span></span>
         </div><!-- // .top-header-left -->
 
         <div class="col-lg-6 col-md-6 text-right top-header-right">
 
           <div class="header-search pull-right visible-lg visible-md" id="header-search">
-            <form method="get" id="searchform" action="#">
-              <div class="header-search-input-wrap"><input class="header-search-input" placeholder="Type to search..." type="text" value="" name="s" id="s"/></div>
+            <form method="get" id="searchform" action="@@search">
+              <div class="header-search-input-wrap"><input class="header-search-input" placeholder="全文搜尋" type="text" value="" name="SearchableText" id="s"/></div>
               <input class="header-search-submit" type="submit" id="go" value=""><span class="header-icon-search"><i class="fa fa-search"></i></span>
             </form><!-- // #searchform -->
           </div><!-- // .header-search -->
-
+<!--
           <ul class="social list-unstyled pull-right">
             <li class="facebook"><a data-toggle="tooltip" data-placement="bottom" title="Facebook Page" href="#"><i class="fa fa-facebook"></i></a></li>
             <li class="googleplus"><a data-toggle="tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a></li>
             <li class="rss"><a data-toggle="tooltip" data-placement="bottom" title="RSS News" href="#"><i class="fa fa-rss"></i></a></li>
-          </ul><!-- // .social -->
+          </ul>--><!-- // .social -->
 
         </div><!-- // .top-header-right -->
 
@@ -80,8 +80,8 @@
 
         <div class="left-menu hide">
           <div class="left-menu-info">
-            <form action="post">
-              <input type="text" placeholder="Type to search" name="s">
+            <form action="@@search">
+              <input type="text" placeholder="全文搜尋" name="SearchableText">
               <button><i class="fa fa-search"></i></button>
             </form>
           </div><!-- // .left-menu-info -->
@@ -170,76 +170,14 @@
     <div class="eross-slider">
       <div class="slider flexslider">
         <ul class="slides">
-          <li><a href="#"><img id="ntunhsSlide" src="images/placeholder/1170x450.gif" alt="" /></a></li> 
+          <li><a href="#"><img src="images/placeholder/1170x450.gif" alt="" /></a></li> 
           <li><a href="#"><img src="images/placeholder/1170x450.gif" alt="" /></a></li>
         </ul><!-- // .slides -->
       </div><!-- // .slider -->
     </div><!-- // .portfolio-slider -->
 
+<!--刪掉一段script，有問題的話加回來這裏下面-->
 
-<script type="text/javascript">
-var revapi1;
-jQuery(document).ready(function() {
-
-  if (jQuery.fn.cssOriginal != undefined)
-    jQuery.fn.css = jQuery.fn.cssOriginal;
-
-  if(jQuery('#rev_slider').revolution == undefined)
-    revslider_showDoubleJqueryError('#rev_slider');
-  else
-    revapi1 = jQuery('#rev_slider').show().revolution(
-    {
-      delay:9000,
-      startwidth:1170,
-      startheight:450,
-      hideThumbs:200,
-
-      thumbWidth:100,
-      thumbHeight:50,
-      thumbAmount:3,
-
-      navigationType:"bullet",
-      navigationArrows:"solo",
-      navigationStyle:"round",
-
-      touchenabled:"on",
-      onHoverStop:"on",
-
-      navigationHAlign:"center",
-      navigationVAlign:"bottom",
-      navigationHOffset:0,
-      navigationVOffset:20,
-
-      soloArrowLeftHalign:"left",
-      soloArrowLeftValign:"center",
-      soloArrowLeftHOffset:20,
-      soloArrowLeftVOffset:0,
-
-      soloArrowRightHalign:"right",
-      soloArrowRightValign:"center",
-      soloArrowRightHOffset:20,
-      soloArrowRightVOffset:0,
-
-      shadow:0,
-      fullWidth:"on",
-      fullScreen:"off",
-
-      stopLoop:"off",
-      stopAfterLoops:-1,
-      stopAtSlide:-1,
-
-      shuffle:"off",
-
-      hideSliderAtLimit:0,
-      hideCaptionAtLimit:0,
-      hideAllCaptionAtLilmit:0,
-      startWithSlide:0,
-      videoJsPath:"js/revslider/js/videojs/",
-      fullScreenOffsetContainer: "" 
-    });
-
-}); //ready
-</script>
 
 <!-- 四欄 -->
 <section class="top-30">
@@ -248,31 +186,29 @@ jQuery(document).ready(function() {
 
     <div class="row">
       <div class="col-lg-3 col-md-3">
-        <h4 class="button orange">最新消息<i class="fa fa-heart"></i></h4>
-        <p>
-          <ul>
-            <li>第一條馬路消息，最好馬上就驗收，不然我可能會很慘</li>
-            <li>第二條馬路消息，台新的事最好快底定，這樣才會有未來</li>
-            <li>第三條馬路消息，台灣畫院的事，趕快去約客戶</li>
-            <li>第四條馬路消息，如果沒意外，明年我應該會發了才對，沒發就沒天理了，是吧	</li>
-            <li>第五條馬路消息，這個區塊就好就是放五條訊息加上more，這樣的排版可能會比較好看一點</li>
-          </ul>
-        </p>
+        <a href="http://ntunhs.playgroup.com.tw/news/plan"><h4 class="button orange">培訓計畫<i class="fa fa-heart"></i></h4></a>
+        <div id="ntunhsPlan">
+          <li>第一條消息</li>
+          <li>第二條消息</li>
+          <li>第二條消息</li>
+          <li>第二條消息</li>
+          <li>第二條消息</li>
+        </div>
       </div><!-- // end column -->
 
       <div class="col-lg-3 col-md-3">
-        <h4 class="button green">校內公告<i class="fa fa-heart"></i></h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, tempora, nobis, vero, esse voluptatum ducimus nulla explicabo suscipit quia officiis asperiores laboriosam repellendus quam quibusdam nam animi culpa veritatis sit.</p>
+        <a href="http://ntunhs.playgroup.com.tw/news/internal_news"><h4 class="button green">校內公告</h4></a>
+        <div id="ntunhsInternalNews"></div>
       </div><!-- // end column -->
 
       <div class="col-lg-3 col-md-3">
-        <h4 class="button blue">活動訊息<i class="fa fa-heart"></i></h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, tempora, nobis, vero, esse voluptatum ducimus nulla explicabo suscipit quia officiis asperiores laboriosam repellendus quam quibusdam nam animi culpa veritatis sit.</p>
+        <a href="http://ntunhs.playgroup.com.tw/news/plan_and_department"><h4 class="button border blue">相關業務<i class="fa fa-heart"></i></h4></a>
+        <div id="ntunhsPlanAndDepartment"></div>
       </div><!-- // end column -->
 
       <div class="col-lg-3 col-md-3">
-        <h4 class="button yellow">競賽通知<i class="fa fa-heart"></i></h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, tempora, nobis, vero, esse voluptatum ducimus nulla explicabo suscipit quia officiis asperiores laboriosam repellendus quam quibusdam nam animi culpa veritatis sit.</p>
+        <a href="http://ntunhs.playgroup.com.tw/news/race"><h4 class="button yellow">競賽通知 <img src="images/schoolIcon.png"/></h4></a>
+        <div id="ntunhsRace"></div>
       </div><!-- // end column -->
 
     </div><!-- // .row -->
@@ -281,6 +217,8 @@ jQuery(document).ready(function() {
 </div>
 </section><!-- // .top-30 -->
 <!-- 四欄 -->
+
+<br />
 
 <!-- 第二個section -->
 <section id="team" class="clearfix">
@@ -303,11 +241,11 @@ jQuery(document).ready(function() {
       <div class="col-lg-4 col-md-4 col-sm-4 bottom-20-xs">
         <div class="team clearfix">
           <div class="team-avatar">
-            <img src="images/placeholder/320x320.gif" alt="">
+            <img src="images/placeholder/libary_image.png" alt="">
           </div><!-- // .team-avatar -->
 
           <div class="team-info">
-            <h5 class="button border green">知識管理系統</h5>
+            <a href="http://ntunhs.playgroup.com.tw/links/knowledge"><h5 class="button border green">知識管理系統</h5></a>
 <!--            <span class="position">Knowledge base</span> -->
             <p>提供多項管理專業資訊連結，內容函蓋多方資訊，充實自我專業的好地方。</p>
           </div><!-- // .team-info -->
@@ -317,11 +255,11 @@ jQuery(document).ready(function() {
       <div class="col-lg-4 col-md-4 col-sm-4 bottom-20-xs">
         <div class="team clearfix">
           <div class="team-avatar">
-            <img src="images/placeholder/320x320.gif" alt="">
+            <img src="images/placeholder/school_image1.png" alt="">
           </div><!-- // .team-avatar -->
 
           <div class="team-info">
-            <h5 class="button border orange">就業職能平台</h5>
+           <a href="http://ntunhs.playgroup.com.tw/links/about_job"> <h5 class="button border orange">就業職能平台</h5></a>
 <!--            <span class="position">Human Resources</span> -->
             <p>與政府就業平台連結，提供工作職缺及職業訓練相關資訊，增強自我專業技能，提升職場競爭力。</p>
           </div><!-- // .team-info -->
@@ -331,11 +269,11 @@ jQuery(document).ready(function() {
       <div class="col-lg-4 col-md-4 col-sm-4 bottom-20-xs">
         <div class="team clearfix">
           <div class="team-avatar">
-            <img src="images/placeholder/320x320.gif" alt="">
+            <img src="images/placeholder/school_image2.png" alt="">
           </div><!-- // .team-avatar -->
 
           <div class="team-info">
-            <h5 class="button border blue">聯絡我們</h5>
+            <a href="http://ntunhs.playgroup.com.tw/contact_us/index"><h5 class="button border blue">聯絡我們</h5></a>
 <!--            <span class="position">Contact us</span> -->
             <p>提供本中心聯絡方式及表單，不論是產學相關提案或輔導需求，或是網站相關建議，均歡迎各方先進與我們聯絡。</p>
           </div><!-- // .team-info -->
@@ -368,13 +306,13 @@ jQuery(document).ready(function() {
             <h5>專案辦公室資訊</h5>
           </div> <!-- // .widget-title -->
 
-          <p>辦公室地點：行政大樓3樓企畫室 - 服務時間： 星期一至星期五 上午8:30~12:00 下午1:30~5:30</p>
+          <p>辦公室地點：<span id="ntunhs_office_position">行政大樓3樓企畫室</span> - 服務時間： <span id="ntunhs_service_time">星期一至星期五 上午8:30~12:00 下午1:30~5:30</span></p>
 
           <ul class="list-unstyled contact-field-list clearfix">
-            <li>地址:台北市北投區 11219 明德路365號 </li>
-            <li><a href="mailto:service@ntunhs.edu.tw">email:service@ntunhs.edu.tw</a></li>
-            <li>電話:(02)2822-7107</li>
-            <li>傳真:(02)2822-XXXX</li>
+            <li>地址:<span id="ntunhs_address">台北市北投區 11219 明德路365號</span> </li>
+            <li>email:<a id="ntunhs_office_mail" href="mailto:service@ntunhs.edu.tw">service@ntunhs.edu.tw</a></li>
+            <li>電話:<span id="ntunhs_office_tel">(02)2822-7107</span></li>
+            <li>傳真:<span id="ntunhs_office_fax">(02)2822-XXXX</span></li>
           </ul><!-- // .contact-field-list -->
 
         </div><!-- // .widget -->
@@ -396,7 +334,7 @@ jQuery(document).ready(function() {
       <div class="row">
 
         <div class="col-lg-6 col-md-6">
-          <span>Copyright © 2013 國立臺北護理健康大學 | 健康照護產學營運中心</span>
+          <span id="ntunhs_copyright">Copyright © 2013 國立臺北護理健康大學 | 健康照護產學營運中心</span>
         </div><!-- // -->
 <!--
         <div class="col-lg-6 col-md-6 text-right">
@@ -410,6 +348,8 @@ jQuery(document).ready(function() {
       </div><!-- // .row -->
     </div><!-- // .container -->
   </div><!-- // .credit -->
+
+
 </footer><!-- // #footer -->
 
 <!-- Core JavaScript
