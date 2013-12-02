@@ -304,7 +304,7 @@
     </rules>
 
 
-    <!-- home page for 典範計畫 -->
+    <!-- home page for contact_us -->
     <rules if-path="contact_us">
         <!-- theme -->
         <theme href="contact.html" />
