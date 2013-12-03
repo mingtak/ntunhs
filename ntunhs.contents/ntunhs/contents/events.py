@@ -16,6 +16,8 @@ from plone.namedfile.interfaces import IImageScaleTraversable
 
 
 from ntunhs.contents import MessageFactory as _
+from plone import api
+
 
 #全文檢索用
 from collective import dexteritytextindexer
