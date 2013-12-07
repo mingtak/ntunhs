@@ -20,6 +20,14 @@
     <!-- title -->
     <replace css:theme="html head title" css:content="html head title" />
 
+    <!-- notheme list -->
+    <notheme css:if-content="#form" />
+    <notheme css:if-content="body.template-atct_edit" />
+    <notheme if-path="@@manage-portlets" />
+    <notheme if-path="folder_contents" />
+    <notheme if-path="edit" />
+    <notheme if-path="quickedit" />
+
 
     <!-- home page for NTUNHS-->
     <rules if-path="/">
@@ -42,8 +50,10 @@
     <rules if-path="news">
         <!-- theme -->
         <theme href="page-left-sidebar.html" />
+<!--
         <notheme css:if-content="body.template-atct_edit" />
         <notheme if-path="@@manage-portlets" />
+-->
 
         <!-- left nav -->
         <replace css:theme-children="#ntunhs-left-nav"
@@ -75,9 +85,10 @@
     <rules if-path="about_plan">
         <!-- theme -->
         <theme href="page-full-width.html" />
+<!--
         <notheme css:if-content="body.template-atct_edit" />
         <notheme if-path="@@manage-portlets" />
-
+-->
         <!-- edit bar -->
         <replace css:theme-children="#ntunhs-edit-bar div.widget-content"
                  css:content-children="#edit-bar" />
@@ -103,9 +114,10 @@
     <rules if-path="operations_center">
         <!-- theme -->
         <theme href="page-left-sidebar.html" />
+<!--
         <notheme css:if-content="body.template-atct_edit" />
         <notheme if-path="@@manage-portlets" />
-
+-->
         <!-- left nav -->
         <replace css:theme-children="#ntunhs-left-nav"
                  css:content-children="ul.navTree.navTreeLevel0" />
@@ -136,9 +148,9 @@
     <rules if-path="apply_form">
         <!-- theme -->
         <theme href="page-left-sidebar.html" />
-        <notheme css:if-content="body.template-atct_edit" />
+<!--        <notheme css:if-content="body.template-atct_edit" />
         <notheme if-path="@@manage-portlets" />
-
+-->
         <!-- left nav -->
         <replace css:theme-children="#ntunhs-left-nav"
                  css:content-children="ul.navTree.navTreeLevel0" />
@@ -169,9 +181,9 @@
     <rules if-path="apply_system">
         <!-- theme -->
         <theme href="page-left-sidebar.html" />
-        <notheme css:if-content="body.template-atct_edit" />
+<!--        <notheme css:if-content="body.template-atct_edit" />
         <notheme if-path="@@manage-portlets" />
-
+-->
         <!-- left nav -->
         <replace css:theme-children="#ntunhs-left-nav"
                  css:content-children="ul.navTree.navTreeLevel0" />
@@ -202,9 +214,9 @@
     <rules if-path="resource">
         <!-- theme -->
         <theme href="page-left-sidebar.html" />
-        <notheme css:if-content="body.template-atct_edit" />
+<!--        <notheme css:if-content="body.template-atct_edit" />
         <notheme if-path="@@manage-portlets" />
-
+-->
         <!-- left nav -->
         <replace css:theme-children="#ntunhs-left-nav"
                  css:content-children="ul.navTree.navTreeLevel0" />
@@ -235,9 +247,9 @@
     <rules if-path="faq">
         <!-- theme -->
         <theme href="page-left-sidebar.html" />
-        <notheme css:if-content="body.template-atct_edit" />
+<!--        <notheme css:if-content="body.template-atct_edit" />
         <notheme if-path="@@manage-portlets" />
-
+-->
         <!-- left nav -->
         <replace css:theme-children="#ntunhs-left-nav"
                  css:content-children="ul.navTree.navTreeLevel0" />
@@ -273,9 +285,9 @@
     <rules if-path="links">
         <!-- theme -->
         <theme href="page-left-sidebar.html" />
-        <notheme css:if-content="body.template-atct_edit" />
+<!--        <notheme css:if-content="body.template-atct_edit" />
         <notheme if-path="@@manage-portlets" />
-
+-->
         <!-- left nav -->
         <drop css:theme="#ntunhs-sidebar-next-div" />
 <!--        <replace css:theme-children="#ntunhs-left-nav"
@@ -308,9 +320,9 @@
     <rules if-path="contact_us">
         <!-- theme -->
         <theme href="contact.html" />
-        <notheme css:if-content="body.template-atct_edit" />
+<!--        <notheme css:if-content="body.template-atct_edit" />
         <notheme if-path="@@manage-portlets" />
-
+-->
         <!-- edit bar -->
         <replace css:theme-children="#ntunhs-edit-bar div.widget-content"
                  css:content-children="#edit-bar" />
