@@ -16,11 +16,24 @@ from plone.namedfile.interfaces import IImageScaleTraversable
 
 
 from ntunhs.contents import MessageFactory as _
+
 from plone import api
-from zope.lifecycleevent.interfaces import IObjectAddedEvent, IObjectModifiedEvent
+from zope.lifecycleevent.interfaces import IObjectAddedEvent, IObjectModifiedEvent, IObjectRemovedEvent
+import os
+import csv
 
 #全文檢索用
 from collective import dexteritytextindexer
+
+
+#報名系統匯出目錄路徑
+exportCsvDir = '/home/plone/Plone/zinstance/var/ntunhsExportCsv/'
+
+
+#測試發生,這段隨時可刪除
+def writein(string=str()):
+    with open('/home/plone/ntunhsyyyyy', 'a') as foo:
+        foo.write(string + '\n')
 
 
 # Interface class; used to define content-type schema.
@@ -30,45 +43,44 @@ class Ievents(form.Schema, IImageScaleTraversable):
     events for NTUNHS
     """
 
-    # If you want a schema-defined interface, delete the model.load
-    # line below and delete the matching file in the models sub-directory.
-    # If you want a model-based interface, edit
-    # models/events.xml to define the content type.
-
     form.model("models/events.xml")
     #定義全文檢索欄位
     dexteritytextindexer.searchable('body')
-
-# Custom content-type class; objects created for this content type will
-# be instances of this class. Use this class to add content-type specific
-# methods and properties. Put methods that are mainly useful for rendering
-# in separate view classes.
 
 
 class events(Container):
     grok.implements(Ievents)
     # Add your class methods and properties here
 
+    #處理報名程序
+    def sendApply(self):
+        catalog = api.portal.get_tool(name='portal_catalog')
+        applyContent = {'topic':str(self.REQUEST.form['topic']),
+                        'name':str(self.REQUEST.form['name']),
+                        'company_name':str(self.REQUEST.form['company_name']),
+                        'your_title':str(self.REQUEST.form['your_title']),
+                        'phone_number':str(self.REQUEST.form['phone_number']),
+                        'phone_number2':str(self.REQUEST.form['phone_number2']),
+                        'replyto':str(self.REQUEST.form['replyto']),
+                        'certify_id':str(self.REQUEST.form['certify_id'])
+                       }
+        
+        #catalog找uid
+        objectId = str(self.REQUEST['BASE3']).split('/')[4]
+        objectUid = str(catalog(id=objectId)[0]['UID'])
+        #以csv格式寫入
+        with open('%s%s%s' % (exportCsvDir, objectUid, '.csv'), 'ab') as fileName:
+            csvFile = csv.writer(fileName, dialect='excel')
+            csvFile.writerows([[applyContent['topic'],
+                                applyContent['name'],
+                                applyContent['company_name'],
+                                applyContent['your_title'],
+                                applyContent['phone_number'],
+                                applyContent['phone_number2'],
+                                applyContent['replyto'],
+                                applyContent['certify_id']]])
+        return
 
-# View class
-# The view will automatically use a similarly named template in
-# events_templates.
-# Template filenames should be all lower case.
-# The view will render when you request a content object with this
-# interface with "/@@sampleview" appended.
-# You may make this the default view for content objects
-# of this type by uncommenting the grok.name line below or by
-# changing the view class name and template filename to View / view.pt.
-
-#測試發生,這段隨時可刪除
-'''
-def writein(string=str()):
-    with open('/home/plone/ntunhsyyyyy', 'a') as foo:
-        foo.write(string + '\n')
-'''
-
-#報名系統匯出目錄路徑
-exportCsvDir = '/home/plone/Plone/zinstance/var/ntunhsExportCsv/'
 
 #檢查ExpirationDate
 def checkExpirationDate(object):
@@ -76,12 +88,17 @@ def checkExpirationDate(object):
         api.portal.show_message(message=u'您未設定報名截止日期! 請回上一頁設定。', type='error', request=object.REQUEST)
         raise ValueError('setup ExpirationDate not yet')
 
+
 #event handle: 新增報名表
 @grok.subscribe(Ievents, IObjectAddedEvent)
 def notifyUser(object, event):
     checkExpirationDate(object)
-    with open('%s%s%s' % (exportCsvDir, object.UID(), '.date'), 'w') as exportCsv:
-        exportCsv.write(str(object.ExpirationDate()))
+    with open('%s%s%s' % (exportCsvDir, object.UID(), '.date'), 'w') as dateFileName:
+        dateFileName.write(str(object.ExpirationDate()))
+    with open('%s%s%s' % (exportCsvDir, object.UID(), '.csv'), 'wb') as csvFileName:
+        csvFile = csv.writer(csvFileName, dialect='excel')
+        csvFile.writerows([['活動名稱', '姓名', '公司名稱', '職稱', '電話號碼', '電話號碼2', '電子郵件', '公務人員id']])
+
 
 #event handle:修改報名表
 @grok.subscribe(Ievents, IObjectModifiedEvent)
@@ -89,6 +106,12 @@ def notifyUser(object, event):
     checkExpirationDate(object)
     with open('%s%s%s' % (exportCsvDir, object.UID(), '.date'), 'w') as exportCsv:
         exportCsv.write(str(object.ExpirationDate()))
+
+
+#event handle:刪除報名表
+@grok.subscribe(Ievents, IObjectRemovedEvent)
+def notifyUser(object, event):
+    os.system('%s%s%s%s' % ('rm ',exportCsvDir, object.UID(), '*'))
 
 
 class SampleView(grok.View):
