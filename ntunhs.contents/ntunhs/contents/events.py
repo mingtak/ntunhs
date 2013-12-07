@@ -17,7 +17,7 @@ from plone.namedfile.interfaces import IImageScaleTraversable
 
 from ntunhs.contents import MessageFactory as _
 from plone import api
-
+from zope.lifecycleevent.interfaces import IObjectAddedEvent, IObjectModifiedEvent
 
 #全文檢索用
 from collective import dexteritytextindexer
@@ -44,6 +44,7 @@ class Ievents(form.Schema, IImageScaleTraversable):
 # methods and properties. Put methods that are mainly useful for rendering
 # in separate view classes.
 
+
 class events(Container):
     grok.implements(Ievents)
     # Add your class methods and properties here
@@ -58,6 +59,37 @@ class events(Container):
 # You may make this the default view for content objects
 # of this type by uncommenting the grok.name line below or by
 # changing the view class name and template filename to View / view.pt.
+
+#測試發生,這段隨時可刪除
+'''
+def writein(string=str()):
+    with open('/home/plone/ntunhsyyyyy', 'a') as foo:
+        foo.write(string + '\n')
+'''
+
+#報名系統匯出目錄路徑
+exportCsvDir = '/home/plone/Plone/zinstance/var/ntunhsExportCsv/'
+
+#檢查ExpirationDate
+def checkExpirationDate(object):
+    if str(object.ExpirationDate()) == 'None':
+        api.portal.show_message(message=u'您未設定報名截止日期! 請回上一頁設定。', type='error', request=object.REQUEST)
+        raise ValueError('setup ExpirationDate not yet')
+
+#event handle: 新增報名表
+@grok.subscribe(Ievents, IObjectAddedEvent)
+def notifyUser(object, event):
+    checkExpirationDate(object)
+    with open('%s%s%s' % (exportCsvDir, object.UID(), '.date'), 'w') as exportCsv:
+        exportCsv.write(str(object.ExpirationDate()))
+
+#event handle:修改報名表
+@grok.subscribe(Ievents, IObjectModifiedEvent)
+def notifyUser(object, event):
+    checkExpirationDate(object)
+    with open('%s%s%s' % (exportCsvDir, object.UID(), '.date'), 'w') as exportCsv:
+        exportCsv.write(str(object.ExpirationDate()))
+
 
 class SampleView(grok.View):
     """ sample view class """
