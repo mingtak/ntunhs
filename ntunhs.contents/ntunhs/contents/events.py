@@ -20,6 +20,7 @@ from plone import api
 from zope.lifecycleevent.interfaces import IObjectAddedEvent, IObjectModifiedEvent, IObjectRemovedEvent
 import os
 import csv
+import random
 
 import smtplib #, mimetypes
 from email.mime.text import MIMEText
@@ -35,6 +36,8 @@ from collective import dexteritytextindexer
 
 #報名系統匯出目錄路徑
 exportCsvDir = '/home/plone/Plone/zinstance/var/ntunhsExportCsv/'
+#寄送csv檔執行路徑
+sendCsvFileTo_path = '/home/plone/Plone/zinstance/var/ntunhsExportCsv/sendCsvFileTo.py'
 
 
 #測試發生,這段隨時可刪除
@@ -131,19 +134,49 @@ def checkExpirationDate(object):
 @grok.subscribe(Ievents, IObjectAddedEvent)
 def notifyUser(object, event):
     checkExpirationDate(object)
-    with open('%s%s%s' % (exportCsvDir, object.UID(), '.date'), 'w') as dateFileName:
-        dateFileName.write(str(object.ExpirationDate()))
+    expirationDate = object.ExpirationDate()
     with open('%s%s%s' % (exportCsvDir, object.UID(), '.csv'), 'wb') as csvFileName:
         csvFile = csv.writer(csvFileName, dialect='excel')
         csvFile.writerows([['活動名稱', '姓名', '公司名稱', '職稱', '電話號碼', '電話號碼2', '電子郵件', '公務人員id']])
 
+    #將script寫入uid+random.sh,再以at待命執行
+    expirationDate = str(object.ExpirationDate())
+
+    sendCsvDate = {'date':expirationDate.split('T')[0],
+                   'hours':expirationDate.split('T')[1].split(':')[0],
+                   'minutes':expirationDate.split('T')[1].split(':')[1]}
+    script_content = '%s %s %s %s %s%s%s' % ('python',
+                                             sendCsvFileTo_path,
+                                             str(object.sendEmailTo),
+                                             str(object.Title().replace(' ', '')),
+                                             exportCsvDir, object.UID(), '.csv')
+    shFileName = '%s%s%s%s' % (exportCsvDir, object.UID(), str(random.randint(100,999)), '.sh')
+    with open(shFileName, 'w') as shFile:
+        shFile.write(script_content)
+    os.system('%s %s %s%s %s' % ('at -f', shFileName, sendCsvDate['hours'], sendCsvDate['minutes'], sendCsvDate['date']))
 
 #event handle:修改報名表
 @grok.subscribe(Ievents, IObjectModifiedEvent)
 def notifyUser(object, event):
     checkExpirationDate(object)
-    with open('%s%s%s' % (exportCsvDir, object.UID(), '.date'), 'w') as exportCsv:
-        exportCsv.write(str(object.ExpirationDate()))
+#    with open('%s%s%s' % (exportCsvDir, object.UID(), '.date'), 'w') as exportCsv:
+#        exportCsv.write(str(object.ExpirationDate()))
+    os.system('%s%s%s%s' % ('rm ',exportCsvDir, object.UID(), '*.sh'))
+    #將script寫入uid+random.sh,再以at待命執行
+    expirationDate = str(object.ExpirationDate())
+
+    sendCsvDate = {'date':expirationDate.split('T')[0],
+                   'hours':expirationDate.split('T')[1].split(':')[0],
+                   'minutes':expirationDate.split('T')[1].split(':')[1]}
+    script_content = '%s %s %s %s %s%s%s' % ('python',
+                                             sendCsvFileTo_path,
+                                             str(object.sendEmailTo),
+                                             str(object.Title().replace(' ', '')),
+                                             exportCsvDir, object.UID(), '.csv')
+    shFileName = '%s%s%s%s' % (exportCsvDir, object.UID(), str(random.randint(100,999)), '.sh')
+    with open(shFileName, 'w') as shFile:
+        shFile.write(script_content)
+    os.system('%s %s %s%s %s' % ('at -f', shFileName, sendCsvDate['hours'], sendCsvDate['minutes'], sendCsvDate['date']))
 
 
 #event handle:刪除報名表
