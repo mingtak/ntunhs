@@ -14,13 +14,20 @@ from plone.namedfile.field import NamedImage, NamedFile
 from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 from plone.namedfile.interfaces import IImageScaleTraversable
 
-
 from ntunhs.contents import MessageFactory as _
 
 from plone import api
 from zope.lifecycleevent.interfaces import IObjectAddedEvent, IObjectModifiedEvent, IObjectRemovedEvent
 import os
 import csv
+
+import smtplib #, mimetypes
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.Header import Header
+#from email.mime.image import MIMEImage
+
+
 
 #全文檢索用
 from collective import dexteritytextindexer
@@ -68,6 +75,9 @@ class events(Container):
         #catalog找uid
         objectId = str(self.REQUEST['BASE3']).split('/')[4]
         objectUid = str(catalog(id=objectId)[0]['UID'])
+
+#        foo = api.content.get(UID=objectUid)
+#        writein(string=str(foo.sendEmailTo))
         #以csv格式寫入
         with open('%s%s%s' % (exportCsvDir, objectUid, '.csv'), 'ab') as fileName:
             csvFile = csv.writer(fileName, dialect='excel')
@@ -79,6 +89,34 @@ class events(Container):
                                 applyContent['phone_number2'],
                                 applyContent['replyto'],
                                 applyContent['certify_id']]])
+        #寄出報名信件給承辦人
+        foo = api.content.get(UID=objectUid)
+        sendEmailTo = str(foo.sendEmailTo)
+
+        msg = MIMEMultipart()
+        msg['From'] = "cschu@ntunhs.edu.tw"
+        msg['To'] = sendEmailTo
+        msg['Subject'] = Header('%s%s%s' % ('健康照護產學營運中心:',
+                                            applyContent['topic'],
+                                            ' 有人報名'),
+                                charset='UTF-8')
+        mailBody = MIMEText('%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s%s\n\n%s\n%s' % ( \
+                             '活動名稱：', applyContent['topic'],
+                             '姓名：', applyContent['name'],
+                             '機構名稱：', applyContent['company_name'],
+                             '職稱：', applyContent['your_title'],
+                             '聯絡電話：', applyContent['phone_number'],
+                             '聯絡電話2：', applyContent['phone_number2'],
+                             'Email信箱：', applyContent['replyto'],
+                             '公務人員ID：', applyContent['certify_id'],
+                             '-----------------------------------------',
+                             '本郵件由系統自動發出，請勿回覆本郵件'),
+                            _subtype='plain',  _charset='UTF-8')
+        msg.attach(mailBody)
+        smtp = smtplib.SMTP()
+        smtp.connect('smtp1.ntunhs.edu.tw:25')
+        smtp.sendmail(msg['From'], msg['To'], msg.as_string())
+        smtp.quit()
         return
 
 

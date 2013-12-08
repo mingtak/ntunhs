@@ -1,6 +1,11 @@
 <?xml version='1.0' encoding='utf8'?>
 <model xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns="http://namespaces.plone.org/supermodel/schema">
   <schema>
+    <field name="sendEmailTo" type="zope.schema.TextLine">
+      <description/>
+      <required>True</required>
+      <title>主辦單位email(系統將以此寄發報名信件)</title>
+    </field>
     <field name="body" type="plone.app.textfield.RichText">
       <description/>
       <required>False</required>
