@@ -16,34 +16,24 @@ from plone.namedfile.interfaces import IImageScaleTraversable
 
 from ntunhs.contents import MessageFactory as _
 
+#自訂import
 from plone import api
 from zope.lifecycleevent.interfaces import IObjectAddedEvent, IObjectModifiedEvent, IObjectRemovedEvent
 import os
 import csv
 import random
-
-import smtplib #, mimetypes
+import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.Header import Header
-#from email.mime.image import MIMEImage
-
-
-
-#全文檢索用
 from collective import dexteritytextindexer
 
 
+#全域變數
 #報名系統匯出目錄路徑
 exportCsvDir = '/home/plone/Plone/zinstance/var/ntunhsExportCsv/'
 #寄送csv檔執行路徑
 sendCsvFileTo_path = '/home/plone/Plone/zinstance/var/ntunhsExportCsv/sendCsvFileTo.py'
-
-
-#測試發生,這段隨時可刪除
-def writein(string=str()):
-    with open('/home/plone/ntunhsyyyyy', 'a') as foo:
-        foo.write(string + '\n')
 
 
 # Interface class; used to define content-type schema.
@@ -79,8 +69,6 @@ class events(Container):
         objectId = str(self.REQUEST['BASE3']).split('/')[4]
         objectUid = str(catalog(id=objectId)[0]['UID'])
 
-#        foo = api.content.get(UID=objectUid)
-#        writein(string=str(foo.sendEmailTo))
         #以csv格式寫入
         with open('%s%s%s' % (exportCsvDir, objectUid, '.csv'), 'ab') as fileName:
             csvFile = csv.writer(fileName, dialect='excel')
@@ -155,12 +143,12 @@ def notifyUser(object, event):
         shFile.write(script_content)
     os.system('%s %s %s%s %s' % ('at -f', shFileName, sendCsvDate['hours'], sendCsvDate['minutes'], sendCsvDate['date']))
 
+
 #event handle:修改報名表
 @grok.subscribe(Ievents, IObjectModifiedEvent)
 def notifyUser(object, event):
     checkExpirationDate(object)
-#    with open('%s%s%s' % (exportCsvDir, object.UID(), '.date'), 'w') as exportCsv:
-#        exportCsv.write(str(object.ExpirationDate()))
+    #刪掉舊script, at內容不用管
     os.system('%s%s%s%s' % ('rm ',exportCsvDir, object.UID(), '*.sh'))
     #將script寫入uid+random.sh,再以at待命執行
     expirationDate = str(object.ExpirationDate())
