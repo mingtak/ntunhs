@@ -19,8 +19,8 @@ msgstr ""
 "X-Is-Fallback-For: zh\n"
 
 ### 以下自定義 i18n ###
-msgid "NTUNHS normal page content type, can attach file."
-msgstr "具附加檔案的文章"
+msgid "ntunhspage"
+msgstr "文章(可加附件)"
 
 msgid "ntunhsbody"
 msgstr "內文"
