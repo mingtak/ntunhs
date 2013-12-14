@@ -1193,7 +1193,7 @@ msgstr "生效日期"
 
 #: plone.stringinterp/plone/stringinterp/adapters.py:247
 msgid "Date Expires"
-msgstr "失效日期"
+msgstr "截止日期"
 
 #: plone.stringinterp/plone/stringinterp/adapters.py:257
 msgid "Date Modified"
@@ -1694,11 +1694,11 @@ msgstr "執行轉換 ${transition}"
 #. Default: "Expiration Date"
 #: CMFPlone/profiles/default/portal_atct.xml
 msgid "Expiration Date"
-msgstr "失效日期"
+msgstr "截止日期"
 
 #: plone.app.querystring/plone/app/querystring/profiles/default/registry.xml
 msgid "Expiration date"
-msgstr "失效日期"
+msgstr "截止日期"
 
 #: plone.app.controlpanel/plone/app/controlpanel/site.py:36
 msgid "Expose Dublin Core metadata"
@@ -7058,7 +7058,7 @@ msgstr "勾選的話，這項目將不在導覽樹中顯示"
 #: Archetypes/ExtensibleMetadata.py:153
 #: CMFPlone/skins/plone_forms/content_status_history.cpt:245
 msgid "help_expiration_date"
-msgstr "指定該項目的失效日期。當到達此日期時，其他人將自動無法檢視這個項目。如果沒指定日期，這個項目將永不失效。"
+msgstr "指定該項目的截止日期。當到達此日期時，其他人將自動無法檢視這個項目。如果沒指定日期，這個項目將永不失效。"
 
 #. Default: "If enabled all external links in the content region open in a new window."
 #: plone/app/theming/browser/controlpanel.pt:521
@@ -8443,7 +8443,7 @@ msgstr "既有的文章標籤"
 #: Archetypes/ExtensibleMetadata.py:152
 #: CMFPlone/skins/plone_forms/content_status_history.cpt:244
 msgid "label_expiration_date"
-msgstr "失效日期"
+msgstr "截止日期"
 
 #. Default: "Enable external editing"
 #: CMFPlone/skins/plone_deprecated/personalize_form.cpt:282
