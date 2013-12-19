@@ -13,8 +13,9 @@ from plone.namedfile.field import NamedImage, NamedFile
 from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 from plone.namedfile.interfaces import IImageScaleTraversable
 
-
 from ntunhs.contents import MessageFactory as _
+
+from collective import dexteritytextindexer
 
 
 # Interface class; used to define content-type schema.
@@ -30,6 +31,8 @@ class Intunhspage(form.Schema, IImageScaleTraversable):
     # models/ntunhspage.xml to define the content type.
 
     form.model("models/ntunhspage.xml")
+    #full text search
+    dexteritytextindexer.searchable('ntunhsbody')
 
 
 # Custom content-type class; objects created for this content type will
@@ -59,6 +62,6 @@ class SampleView(grok.View):
     grok.context(Intunhspage)
     grok.require('zope2.View')
 
-    # grok.name('view')
+    grok.name('view')
 
     # Add view methods here
