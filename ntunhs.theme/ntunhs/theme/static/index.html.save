@@ -311,9 +311,9 @@
           <p>地址：<span id="ntunhs_office_position">11219 台北市北投區明德路365號 </span>| 服務時間： <span id="ntunhs_service_time">週一至週五 上午9:00 至 下午5:00</span></p>
 
           <ul class="list-unstyled contact-field-list clearfix">
-            <li>服務信箱：<a id="ntunhs_office_mail" href="mailto:service@ntunhs.edu.tw">cschu@ntunhs.edu.tw</a></li>
-            <li>辦公室電話：<span id="ntunhs_office_tel">(02)2822-7101分機2726 劉小姐</span></li>
-            <li>辦公室傳真：<span id="ntunhs_office_fax">(02)2820-6729</span></li>
+            <li>服務信：<a id="ntunhs_office_mail" href="mailto:service@ntunhs.edu.tw">cschu@ntunhs.edu.tw</a></li>
+            <li>電話：<span id="ntunhs_office_tel">(02)2822-7101 分機 2726</span></li>
+            <li>傳真：<span id="ntunhs_office_fax">(02)2820-6729</span></li>
           </ul><!-- // .contact-field-list -->
 
         </div><!-- // .widget -->

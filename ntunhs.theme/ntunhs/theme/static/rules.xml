@@ -2,7 +2,8 @@
 <rules
     xmlns="http://namespaces.plone.org/diazo"
     xmlns:css="http://namespaces.plone.org/diazo/css"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    css:if-not-content=".userrole-manager">
 
     <!-- script -->
     <before css:theme-children="html head" css:content="html head script" />
@@ -27,7 +28,6 @@
     <notheme if-path="folder_contents" />
     <notheme if-path="edit" />
     <notheme if-path="quickedit" />
-
 
     <!-- home page for NTUNHS-->
     <rules if-path="/">
@@ -68,6 +68,8 @@
                  css:content-children="#edit-bar" />
         <drop css:content="#edit-bar p.hiddenStructure" />
         <drop css:theme="#ntunhs-edit-bar" css:if-not-content="#edit-bar" />
+        <before css:theme-children="#ntunhs-edit-bar div.widget-content"
+                css:content-children="#ntunhadminpanel" />
 
         <!-- body header -->
         <replace css:theme-children="#content h3.large"
