@@ -15,13 +15,50 @@
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
 
-    <h2>
-        Rendered from
-        ntunhspage_templates/<span tal:replace="template/id" />
-    </h2>
+<img tal:attributes="src string:${context/absolute_url}/@@download/headImage/${context/headImage/filename};"
+     tal:condition="python:False if context.headImage is None else True"
+     width="100%"/>
+<p></p>
 
+    <div tal:content="structure context/ntunhsbody/output">
+    </div>
+<h3>
+  <a tal:attributes="href string:${context/absolute_url}/@@download/ntunhsattachfile/${context/ntunhsattachfile/filename}"
+     tal:content="string:附件下載：${context/ntunhsattachfile/filename}"
+     tal:condition="python:False if context.ntunhsattachfile is None else True"></a>
+</h3>
 
-    <div tal:content="context/Title">Title inserted here</div>
+<p></p>
+
+<div tal:condition="python:False if context.contentImage1 is None else True" style="text-align: center;">
+  <img tal:attributes="src string:${context/absolute_url}/@@download/contentImage1/${context/contentImage1/filename};"
+       width="50%"/>
+  <p tal:content="context/image1Description"></p>
+</div>
+
+<div tal:condition="python:False if context.contentImage2 is None else True" style="text-align: center;">
+  <img tal:attributes="src string:${context/absolute_url}/@@download/contentImage2/${context/contentImage2/filename};"
+       width="50%"/>
+  <p tal:content="context/image2Description"></p>
+</div>
+
+<div tal:condition="python:False if context.contentImage3 is None else True" style="text-align: center;">
+  <img tal:attributes="src string:${context/absolute_url}/@@download/contentImage3/${context/contentImage3/filename};"
+       width="50%"/>
+  <p tal:content="context/image3Description"></p>
+</div>
+
+<div tal:condition="python:False if context.contentImage4 is None else True" style="text-align: center;">
+  <img tal:attributes="src string:${context/absolute_url}/@@download/contentImage4/${context/contentImage4/filename};"
+       width="50%"/>
+  <p tal:content="context/image4Description"></p>
+</div>
+
+<div tal:condition="python:False if context.contentImage5 is None else True" style="text-align: center;">
+  <img tal:attributes="src string:${context/absolute_url}/@@download/contentImage5/${context/contentImage5/filename};"
+       width="50%"/>
+  <p tal:content="context/image5Description"></p>
+</div>
 
   </metal:content-core>
 </metal:main>
