@@ -1,15 +1,70 @@
 <?xml version="1.0" ?>
 <model xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:indexer="http://namespaces.plone.org/supermodel/indexer" xmlns="http://namespaces.plone.org/supermodel/schema">
   <schema>
+    <field name="headImage" type="plone.namedfile.field.NamedBlobImage">
+      <description/>
+      <required>False</required>
+      <title>封面圖</title>
+    </field>
     <field name="ntunhsbody" type="plone.app.textfield.RichText">
       <description/>
       <required>False</required>
-      <title>ntunhsbody</title>
+      <title>內文</title>
     </field>
     <field name="ntunhsattachfile" type="plone.namedfile.field.NamedBlobFile">
       <description>附檔</description>
       <required>False</required>
       <title>ntunhsattachfile</title>
+    </field>
+    <field name="contentImage1" type="plone.namedfile.field.NamedBlobImage">
+      <description/>
+      <required>False</required>
+      <title>附圖1</title>
+    </field>
+    <field name="image1Description" type="zope.schema.TextLine">
+      <description/>
+      <required>False</required>
+      <title>附圖1說明</title>
+    </field>
+    <field name="contentImage2" type="plone.namedfile.field.NamedBlobImage">
+      <description/>
+      <required>False</required>
+      <title>附圖2</title>
+    </field>
+    <field name="image2Description" type="zope.schema.TextLine">
+      <description/>
+      <required>False</required>
+      <title>附圖2說明</title>
+    </field>
+    <field name="contentImage3" type="plone.namedfile.field.NamedBlobImage">
+      <description/>
+      <required>False</required>
+      <title>附圖3</title>
+    </field>
+    <field name="image3Description" type="zope.schema.TextLine">
+      <description/>
+      <required>False</required>
+      <title>附圖3說明</title>
+    </field>
+    <field name="contentImage4" type="plone.namedfile.field.NamedBlobImage">
+      <description/>
+      <required>False</required>
+      <title>附圖4</title>
+    </field>
+    <field name="image4Description" type="zope.schema.TextLine">
+      <description/>
+      <required>False</required>
+      <title>附圖4說明</title>
+    </field>
+    <field name="contentImage5" type="plone.namedfile.field.NamedBlobImage">
+      <description/>
+      <required>False</required>
+      <title>附圖5</title>
+    </field>
+    <field name="image5Description" type="zope.schema.TextLine">
+      <description/>
+      <required>False</required>
+      <title>附圖5說明</title>
     </field>
   </schema>
 </model>
