@@ -17,14 +17,14 @@
 
 <div tal:define="trashcanItems python:context.portal_catalog(review_state='trashcan')">
 
-<form action="deletechecked" method="post">
+<form action="/@@cleantrashcan" method="post">
 <table border="1">
   <thead>
     <tr>
-      <th align="middle" style="cursor: pointer;" class="listing-header-Title">標題</th>
-      <th align="middle" style="cursor: pointer;" class="listing-header-Creator">建立者</th>
-      <th align="middle" style="cursor: pointer;" class="listing-header-Type">修改日期</th>
-      <th align="middle" style="cursor: pointer;" class="listing-header-ModificationDate">選擇</th>
+      <th align="middle">標題</th>
+      <th align="middle">建立者</th>
+      <th align="middle">修改日期</th>
+      <th align="middle">選擇</th>
     </tr>
   </thead>
   <tbody>
@@ -33,9 +33,9 @@
         <a href="" tal:attributes="href python:trashcanItem.getPath().replace('/ntunhs/', '/' )"
                    tal:content="trashcanItem/Title">Title</a>
       </td>
-      <td>user name</td>
-      <td>date time</td>
-      <td align="middle"><input type="checkbox" name="deletecheck" value="title" /></td>
+      <td tal:content="trashcanItem/getOwner">owner id</td>
+      <td tal:content="trashcanItem/CreationDate">date time</td>
+      <td align="middle"><input type="checkbox" name="deletecheck" value="title" tal:attributes="value trashcanItem/getPath" /></td>
     </tr>
   </tbody>
 </table>
