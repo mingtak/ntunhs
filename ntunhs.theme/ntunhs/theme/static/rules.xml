@@ -21,6 +21,9 @@
     <!-- title -->
     <replace css:theme="html head title" css:content="html head title" />
 
+    <!-- footer text -->
+    <replace css:theme-children="#footer-1" css:content-children="#portal-footer" />
+
     <!-- notheme list -->
     <notheme css:if-content="#form" />
     <notheme css:if-content="body.template-atct_edit" />
