@@ -23,6 +23,7 @@
   <property name="behaviors">
      <element value="plone.app.content.interfaces.INameFromTitle" />
      <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
+     <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/>
    </property>
 
   <!-- View information -->
@@ -31,7 +32,7 @@
   <property name="default_view">view</property>
   <property name="view_methods">
    <element value="view"/>
-   <element value="news_view"/>
+   <element value="trashcanview"/>
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>

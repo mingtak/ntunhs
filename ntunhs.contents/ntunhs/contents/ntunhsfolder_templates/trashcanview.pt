@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="ntunhs.contents">
+<body>
+
+<tal:comment tal:condition="nothing">
+    This is a sample view template. It will not be used for rendering the
+    content unless activated by creation of a view class with a matching name.
+</tal:comment>
+
+<metal:main fill-slot="content-core">
+  <metal:content-core define-macro="content-core">
+
+<div tal:define="trashcanItems python:context.portal_catalog(review_state='trashcan')">
+
+<form action="deletechecked" method="post">
+<table border="1">
+  <thead>
+    <tr>
+      <th align="middle" style="cursor: pointer;" class="listing-header-Title">標題</th>
+      <th align="middle" style="cursor: pointer;" class="listing-header-Creator">建立者</th>
+      <th align="middle" style="cursor: pointer;" class="listing-header-Type">修改日期</th>
+      <th align="middle" style="cursor: pointer;" class="listing-header-ModificationDate">選擇</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr tal:repeat="trashcanItem trashcanItems">
+      <td tal:define="object trashcanItem/getObject">
+        <a href="" tal:attributes="href python:trashcanItem.getPath().replace('/ntunhs/', '/' )"
+                   tal:content="trashcanItem/Title">Title</a>
+      </td>
+      <td>user name</td>
+      <td>date time</td>
+      <td align="middle"><input type="checkbox" name="deletecheck" value="title" /></td>
+    </tr>
+  </tbody>
+</table>
+<button name="delete" type="submit">delete</button>
+<button name="reset" value="reset" type="reset">reset</button>
+</form>
+</div>
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+
