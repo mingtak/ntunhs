@@ -8,6 +8,7 @@
   -->
 <object name="portal_types" meta_type="Plone Types Tool">
   <!-- -*- extra stuff goes here -*- -->
+  <object name="ntunhs.contents.ntunhsfooter" meta_type="Dexterity FTI" />
   <object name="ntunhs.contents.ntunhspage" meta_type="Dexterity FTI" />
   <object name="ntunhs.contents.ntunhsfolder" meta_type="Dexterity FTI" />
   <object name="ntunhs.contents.device_list" meta_type="Dexterity FTI" />

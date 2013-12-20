@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<model xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:indexer="http://namespaces.plone.org/supermodel/indexer" xmlns="http://namespaces.plone.org/supermodel/schema">
+  <schema>
+    <field name="address" type="zope.schema.TextLine">
+      <description/>
+      <title>地址</title>
+    </field>
+    <field name="serviceTime" type="zope.schema.TextLine">
+      <description/>
+      <title>服務時間</title>
+    </field>
+    <field name="serviceMail" type="zope.schema.TextLine">
+      <description/>
+      <title>服務信箱</title>
+    </field>
+    <field name="officeTel" type="zope.schema.TextLine">
+      <description/>
+      <title>辦公室電話</title>
+    </field>
+    <field name="officeFax" type="zope.schema.TextLine">
+      <description/>
+      <title>辦公室傳真</title>
+    </field>
+    <field name="businessTel" type="zope.schema.TextLine">
+      <description/>
+      <title>招商專線</title>
+    </field>
+  </schema>
+</model>
