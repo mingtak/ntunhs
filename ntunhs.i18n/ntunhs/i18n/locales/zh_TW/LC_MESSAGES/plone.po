@@ -3705,7 +3705,7 @@ msgstr "管理圖檔縮放尺寸的設定值。"
 #. Default: "Sharing"
 #: CMFPlone/profiles/default/actions.xml
 msgid "Sharing"
-msgstr "分享"
+msgstr "權限設定"
 
 #. Default: "Short Name"
 #: CMFPlone/profiles/default/portal_atct.xml
