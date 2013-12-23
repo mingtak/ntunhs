@@ -28,6 +28,7 @@
     <notheme css:if-content="#form" />
     <notheme css:if-content="body.template-atct_edit" />
     <notheme if-path="@@manage-portlets" />
+    <notheme if-path="@@sharing"
     <notheme if-path="folder_contents" />
     <notheme if-path="edit" />
     <notheme if-path="quickedit" />
