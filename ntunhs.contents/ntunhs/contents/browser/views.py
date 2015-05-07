@@ -1,5 +1,7 @@
+from five import grok
 from Products.Five.browser import BrowserView
 from plone import api
+from zope.interface import Interface
 
 
 def removeItem(path):
@@ -19,3 +21,11 @@ class CleanTrashcan(BrowserView):
                 removeItem(item)        
         trashcan = api.content.get(UID='559f90f72f3042b8ae23278c57e8e08b')
         return trashcan()
+
+
+class IsAnonymous(grok.View):
+
+    grok.context(Interface)
+
+    def render(self):
+        return api.user.is_anonymous()

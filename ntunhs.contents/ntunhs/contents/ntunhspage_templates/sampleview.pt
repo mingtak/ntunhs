@@ -20,7 +20,7 @@
      width="100%"/>
 <p></p>
 
-    <div tal:content="structure context/ntunhsbody/output">
+    <div tal:content="structure context/ntunhsbody/output | nothing">
     </div>
 <h3>
   <a tal:attributes="href string:${context/absolute_url}/@@download/ntunhsattachfile/${context/ntunhsattachfile/filename}"

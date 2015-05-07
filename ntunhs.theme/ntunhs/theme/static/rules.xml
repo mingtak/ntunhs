@@ -21,14 +21,16 @@
     <!-- title -->
     <replace css:theme="html head title" css:content="html head title" />
 
-    <!-- footer text -->
+    <!-- footer text / login / logout -->
     <replace css:theme-children="#footer-1" css:content-children="#portal-footer" />
+    <drop css:theme="a#footer_login"  if="$ismember"/>
+    <drop css:theme="a#footer_logout"  if-not="$ismember"/>
 
     <!-- notheme list -->
     <notheme css:if-content="#form" />
     <notheme css:if-content="body.template-atct_edit" />
     <notheme if-path="@@manage-portlets" />
-    <notheme if-path="@@sharing"
+    <notheme if-path="@@sharing" />
     <notheme if-path="folder_contents" />
     <notheme if-path="edit" />
     <notheme if-path="quickedit" />
